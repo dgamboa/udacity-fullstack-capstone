@@ -41,15 +41,23 @@ class ActorTestCase(unittest.TestCase):
         self.assertTrue(len(data['actors']) > 0)
 
     # Test DELETE actors endpoint
-    def test_delete_actor(self):
-        res = self.client().delete('/actors/2')
+    # def test_delete_actor(self):
+    #     res = self.client().delete('/actors/2')
+    #     data = json.loads(res.data)
+    #
+    #     self.assertEqual(res.status_code, 200)
+    #     self.assertEqual(data['success'], True)
+    #     self.assertEqual(data['deleted'], 2)
+    #     self.assertTrue(data['number_of_actors'])
+    #     self.assertTrue(len(data['actors']))
+
+    def test_422_if_actor_to_delete_does_not_exist(self):
+        res = self.client().delete('actors/100')
         data = json.loads(res.data)
 
-        self.assertEqual(res.status_code, 200)
-        self.assertEqual(data['success'], True)
-        self.assertEqual(data['deleted'], 2)
-        self.assertTrue(data['number_of_actors'])
-        self.assertTrue(len(data['actors']))
+        self.assertEqual(res.status_code, 422)
+        self.assertEqual(data['success'], False)
+        self.assertEqual(data['message'], 'unprocessable')
 
 
 #------------------------------------------------------------------------------#
@@ -75,9 +83,8 @@ class MovieTestCase(unittest.TestCase):
         # Execute after each test
         pass
 
-    #--------------------------------------------------------------------------#
+
     # Test GET movies endpoint
-    #--------------------------------------------------------------------------#
     def test_get_all_movies(self):
         res = self.client().get('/movies')
         data = json.loads(res.data)
@@ -85,6 +92,25 @@ class MovieTestCase(unittest.TestCase):
         self.assertEqual(res.status_code, 200)
         self.assertEqual(data['success'], True)
         self.assertTrue(len(data['movies']) > 0)
+
+    # Test DELETE movies endpoint
+    # def test_delete_movie(self):
+    #     res = self.client().delete('/movies/2')
+    #     data = json.loads(res.data)
+    #
+    #     self.assertEqual(res.status_code, 200)
+    #     self.assertEqual(data['success'], True)
+    #     self.assertEqual(data['deleted'], 2)
+    #     self.assertTrue(data['number_of_movies'])
+    #     self.assertTrue(len(data['movies']))
+
+    def test_422_if_movie_to_delete_does_not_exist(self):
+        res = self.client().delete('movies/100')
+        data = json.loads(res.data)
+
+        self.assertEqual(res.status_code, 422)
+        self.assertEqual(data['success'], False)
+        self.assertEqual(data['message'], 'unprocessable')
 
 
 if __name__ == "__main__":

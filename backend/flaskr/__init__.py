@@ -83,6 +83,31 @@ def create_app(test_config=None):
             'number_of_movies': len(Movie.query.all())
         })
 
+    # DELETE a movie
+    @app.route('/movies/<int:movie_id>', methods=['DELETE'])
+    def delete_movie(movie_id):
+        try:
+            movie = Movie.query.filter(Movie.id == movie_id).one_or_none()
+
+            if movie is None:
+                abort(404)
+
+            movie.delete()
+
+            movies = Movie.query.order_by(Movie.id).all()
+            formatted_movies = {movie.id: movie.title for movie in movies}
+
+            return jsonify ({
+                'success': True,
+                'deleted': movie_id,
+                'movies': formatted_movies,
+                'number_of_movies': len(Movie.query.all())
+            })
+
+        except:
+            abort(422)
+
+
 
     #--------------------------------------------------------------------------#
     # Error Handlers
