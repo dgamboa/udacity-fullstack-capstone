@@ -6,6 +6,7 @@ from flask_cors import CORS
 
 from models import setup_db, Actor, Movie, actor_movies
 
+
 def create_app(test_config=None):
     # create and configure the app
     app = Flask(__name__)
@@ -27,7 +28,19 @@ def create_app(test_config=None):
     #--------------------------------------------------------------------------#
     # API Endpoints
     #--------------------------------------------------------------------------#
+    @app.route('/actors')
+    def get_actors():
+        actors = Actor.query.order_by(Actor.id).all()
+        formatted_actors = {actor.id: actor.name for actor in actors}
 
+        if len(formatted_actors) == 0:
+            abort(404)
+
+        return jsonify({
+            'success': True,
+            'actors': formatted_actors,
+            'number_of_actors': len(Actor.query.all())
+        })
 
 
     return app
