@@ -28,6 +28,8 @@ def create_app(test_config=None):
     #--------------------------------------------------------------------------#
     # API Endpoints
     #--------------------------------------------------------------------------#
+
+    # GET all actors
     @app.route('/actors')
     def get_actors():
         actors = Actor.query.order_by(Actor.id).all()
@@ -40,6 +42,22 @@ def create_app(test_config=None):
             'success': True,
             'actors': formatted_actors,
             'number_of_actors': len(Actor.query.all())
+        })
+
+
+    # GET all movies
+    @app.route('/movies')
+    def get_movies():
+        movies = Movie.query.order_by(Movie.id).all()
+        formatted_movies = {movie.id: movie.title for movie in movies}
+
+        if len(formatted_movies) == 0:
+            abort(404)
+
+        return jsonify({
+            'success': True,
+            'movies': formatted_movies,
+            'number_of_movies': len(Movie.query.all())
         })
 
 

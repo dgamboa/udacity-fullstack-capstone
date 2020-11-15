@@ -7,6 +7,9 @@ from flaskr import create_app
 from models import setup_db, Actor, Movie, actor_movies
 
 
+#------------------------------------------------------------------------------#
+# Actor model test suite
+#------------------------------------------------------------------------------#
 class ActorTestCase(unittest.TestCase):
 
     def setUp(self):
@@ -38,6 +41,10 @@ class ActorTestCase(unittest.TestCase):
         self.assertEqual(data['success'], True)
         self.assertTrue(len(data['actors']) > 0)
 
+
+#------------------------------------------------------------------------------#
+# Movie model test suite
+#------------------------------------------------------------------------------#
 class MovieTestCase(unittest.TestCase):
 
     def setUp(self):
@@ -59,8 +66,15 @@ class MovieTestCase(unittest.TestCase):
         pass
 
     #--------------------------------------------------------------------------#
-    # Test suite for successful operation and expected errors for Movies
+    # Test GET movies endpoint
     #--------------------------------------------------------------------------#
+    def test_get_all_movies(self):
+        res = self.client().get('/movies')
+        data = json.loads(res.data)
+
+        self.assertEqual(res.status_code, 200)
+        self.assertEqual(data['success'], True)
+        self.assertTrue(len(data['movies']) > 0)
 
 
 if __name__ == "__main__":
