@@ -28,9 +28,15 @@ class ActorTestCase(unittest.TestCase):
         pass
 
     #--------------------------------------------------------------------------#
-    # Test suite for successful operation and expected errors for Actors
+    # Test GET actors endpoint
     #--------------------------------------------------------------------------#
+    def test_get_all_actors(self):
+        res = self.client().get('/actors')
+        data = json.loads(res.data)
 
+        self.assertEqual(res.status_code, 200)
+        self.assertEqual(data['success'], True)
+        self.assertTrue(len(data['actors']) > 0)
 
 class MovieTestCase(unittest.TestCase):
 
