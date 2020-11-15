@@ -30,9 +30,8 @@ class ActorTestCase(unittest.TestCase):
         # Execute after each test
         pass
 
-    #--------------------------------------------------------------------------#
+
     # Test GET actors endpoint
-    #--------------------------------------------------------------------------#
     def test_get_all_actors(self):
         res = self.client().get('/actors')
         data = json.loads(res.data)
@@ -40,6 +39,17 @@ class ActorTestCase(unittest.TestCase):
         self.assertEqual(res.status_code, 200)
         self.assertEqual(data['success'], True)
         self.assertTrue(len(data['actors']) > 0)
+
+    # Test DELETE actors endpoint
+    def test_delete_actor(self):
+        res = self.client().delete('/actors/2')
+        data = json.loads(res.data)
+
+        self.assertEqual(res.status_code, 200)
+        self.assertEqual(data['success'], True)
+        self.assertEqual(data['deleted'], 2)
+        self.assertTrue(data['number_of_actors'])
+        self.assertTrue(len(data['actors']))
 
 
 #------------------------------------------------------------------------------#

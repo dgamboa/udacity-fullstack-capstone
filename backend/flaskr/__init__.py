@@ -44,6 +44,29 @@ def create_app(test_config=None):
             'number_of_actors': len(Actor.query.all())
         })
 
+    # DELETE an actor / actress
+    @app.route('/actors/<int:actor_id>', methods=['DELETE'])
+    def delete_actor(actor_id):
+        try:
+            actor = Actor.query.filter(Actor.id == actor_id).one_or_none()
+
+            if actor is None:
+                abort(404)
+
+            actor.delete()
+
+            actors = Actor.query.order_by(Actor.id).all()
+            formatted_actors = {actor.id: actor.name for actor in actors}
+
+            return jsonify ({
+                'success': True,
+                'deleted': actor_id,
+                'actors': formatted_actors,
+                'number_of_actors': len(Actor.query.all())
+            })
+
+        except:
+            abort(422)
 
     # GET all movies
     @app.route('/movies')
