@@ -1,5 +1,5 @@
 import os
-from sqlalchemy import Column, String, Integer, DateTime, create_engine
+from sqlalchemy import Column, String, Integer, Date, create_engine
 from flask_sqlalchemy import SQLAlchemy
 import json
 
@@ -73,7 +73,7 @@ class Movie(db.Model):
 
     id = Column(Integer, primary_key=True)
     title = Column(String, nullable=False)
-    release = Column(DateTime)
+    release = Column(Date)
 
     def __init__(self, title, release):
         self.title = title
