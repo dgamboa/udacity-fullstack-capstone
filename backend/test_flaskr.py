@@ -59,6 +59,43 @@ class ActorTestCase(unittest.TestCase):
         self.assertEqual(data['success'], False)
         self.assertEqual(data['message'], 'unprocessable')
 
+    def test_create_actor(self):
+        new_actor = {
+            'name': 'Michael J. Fox',
+            'age': 59,
+            'gender': 'M'
+        }
+
+        res = self.client().post('/actors', json = new_actor)
+        data = json.loads(res.data)
+
+        self.assertEqual(res.status_code, 200)
+        self.assertEqual(data['success'], True)
+        self.assertTrue(data['created'])
+        self.assertTrue(len(data['actors']))
+        self.assertTrue(data['number_of_actors'])
+
+    def test_400_if_create_actor_fails_from_empty_form(self):
+        res = self.client().post('/actors')
+        data = json.loads(res.data)
+
+        self.assertEqual(res.status_code, 400)
+        self.assertEqual(data['success'], False)
+        self.assertEqual(data['message'], 'bad request')
+
+    def test_422_if_create_actor_fails_from_bad_form(self):
+        bad_actor = {
+            'name': 'That Guy',
+            'age': 'NaN',
+            'gender': 'M'
+        }
+
+        res = self.client().post('/actors', json = bad_actor)
+        data = json.loads(res.data)
+
+        self.assertEqual(res.status_code, 422)
+        self.assertEqual(data['success'], False)
+        self.assertEqual(data['message'], 'unprocessable')
 
 #------------------------------------------------------------------------------#
 # Movie model test suite

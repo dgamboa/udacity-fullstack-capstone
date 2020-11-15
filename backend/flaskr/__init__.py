@@ -68,6 +68,35 @@ def create_app(test_config=None):
         except:
             abort(422)
 
+    # POST (or create) an actor / actress
+    @app.route('/actors', methods=['POST'])
+    def create_actor():
+        body = request.get_json()
+
+        if body == None:
+            abort(400)
+
+        new_name = body.get('name', None)
+        new_age = body.get('age', None)
+        new_gender = body.get('gender', None)
+
+        try:
+            actor = Actor(name=new_name, age=new_age, gender=new_gender)
+            actor.insert()
+
+            actors = Actor.query.order_by(Actor.id).all()
+            formatted_actors = {actor.id: actor.name for actor in actors}
+
+            return jsonify({
+                'success': True,
+                'created': actor.id,
+                'actors': formatted_actors,
+                'number_of_actors': len(Actor.query.all())
+            })
+
+        except:
+            abort(422)
+
     # GET all movies
     @app.route('/movies')
     def get_movies():
