@@ -97,6 +97,42 @@ def create_app(test_config=None):
         except:
             abort(422)
 
+    # PATCH (or update) an actor / actress
+    @app.route('/actors/<int:actor_id>', methods=['PATCH'])
+    def update_actor(actor_id):
+        try:
+            body = request.get_json()
+
+            actor = Actor.query.get(actor_id)
+            new_name = body.get('name', None)
+            new_age = body.get('age', None)
+            new_gender = body.get('gender', None)
+
+            if new_name:
+                actor.name = new_name
+
+            if new_age:
+                actor.age = new_age
+
+            if new_gender:
+                actor.gender = new_gender
+
+            actor.update()
+
+            actors = Actor.query.order_by(Actor.id).all()
+            formatted_actors = {actor.id: actor.name for actor in actors}
+
+            return jsonify({
+                'success': True,
+                'updated': actor.id,
+                'actors': formatted_actors,
+                'number_of_actors': len(Actor.query.all())
+            })
+
+        except:
+            abort(422)
+
+
     # GET all movies
     @app.route('/movies')
     def get_movies():

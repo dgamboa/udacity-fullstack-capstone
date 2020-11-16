@@ -98,6 +98,45 @@ class ActorTestCase(unittest.TestCase):
         self.assertEqual(data['success'], False)
         self.assertEqual(data['message'], 'unprocessable')
 
+    # Test PATCH actors endpoint
+    def test_update_actor(self):
+        updated_actor = {
+            'name': 'Feelix New',
+            'age': 35,
+            'gender': 'M'
+        }
+
+        res = self.client().patch('/actors/2', json = updated_actor)
+        data = json.loads(res.data)
+
+        self.assertEqual(res.status_code, 200)
+        self.assertEqual(data['success'], True)
+        self.assertEqual(data['updated'], 2)
+        self.assertTrue(data['number_of_actors'])
+        self.assertTrue(len(data['actors']))
+
+    def test_422_if_update_actor_fails_from_empty_form(self):
+        res = self.client().patch('/actors/2')
+        data = json.loads(res.data)
+
+        self.assertEqual(res.status_code, 422)
+        self.assertEqual(data['success'], False)
+        self.assertEqual(data['message'], 'unprocessable')
+
+    def test_422_if_update_actor_fails_from_bad_form(self):
+        another_bad_actor = {
+            'name': 'Another Bad',
+            'age': 'NaN',
+            'gender': 'M'
+        }
+
+        res = self.client().patch('/actors/2', json = another_bad_actor)
+        data = json.loads(res.data)
+
+        self.assertEqual(res.status_code, 422)
+        self.assertEqual(data['success'], False)
+        self.assertEqual(data['message'], 'unprocessable')
+
 #------------------------------------------------------------------------------#
 # Movie model test suite
 #------------------------------------------------------------------------------#
