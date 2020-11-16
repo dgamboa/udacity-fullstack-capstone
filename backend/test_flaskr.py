@@ -59,6 +59,7 @@ class ActorTestCase(unittest.TestCase):
         self.assertEqual(data['success'], False)
         self.assertEqual(data['message'], 'unprocessable')
 
+    # Test POST actors endpoint
     def test_create_actor(self):
         new_actor = {
             'name': 'Michael J. Fox',
@@ -143,6 +144,43 @@ class MovieTestCase(unittest.TestCase):
 
     def test_422_if_movie_to_delete_does_not_exist(self):
         res = self.client().delete('movies/100')
+        data = json.loads(res.data)
+
+        self.assertEqual(res.status_code, 422)
+        self.assertEqual(data['success'], False)
+        self.assertEqual(data['message'], 'unprocessable')
+
+    # Test POST movies endpoint
+    def test_create_movie(self):
+        new_movie = {
+            'title': 'Back to the Future',
+            'release': '1985-07-03'
+        }
+
+        res = self.client().post('/movies', json = new_movie)
+        data = json.loads(res.data)
+
+        self.assertEqual(res.status_code, 200)
+        self.assertEqual(data['success'], True)
+        self.assertTrue(data['created'])
+        self.assertTrue(len(data['movies']))
+        self.assertTrue(data['number_of_movies'])
+
+    def test_400_if_create_movie_fails_from_empty_form(self):
+        res = self.client().post('/movies')
+        data = json.loads(res.data)
+
+        self.assertEqual(res.status_code, 400)
+        self.assertEqual(data['success'], False)
+        self.assertEqual(data['message'], 'bad request')
+
+    def test_422_if_create_actor_fails_from_bad_form(self):
+        bad_movie = {
+            'title': 'Gigli',
+            'release': '!'
+        }
+
+        res = self.client().post('/movies', json = bad_movie)
         data = json.loads(res.data)
 
         self.assertEqual(res.status_code, 422)

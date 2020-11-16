@@ -136,6 +136,34 @@ def create_app(test_config=None):
         except:
             abort(422)
 
+    # POST (or create) a movie
+    @app.route('/movies', methods=['POST'])
+    def create_movie():
+        body = request.get_json()
+
+        if body == None:
+            abort(400)
+
+        new_title = body.get('title', None)
+        new_release = body.get('release', None)
+
+        try:
+            movie = Movie(title=new_title, release=new_release)
+            movie.insert()
+
+            movies = Movie.query.order_by(Movie.id).all()
+            formatted_movies = {movie.id: movie.title for movie in movies}
+
+            return jsonify({
+                'success': True,
+                'created': movie.id,
+                'movies': formatted_movies,
+                'number_of_movies': len(Movie.query.all())
+            })
+
+        except:
+            abort(422)
+
 
 
     #--------------------------------------------------------------------------#
