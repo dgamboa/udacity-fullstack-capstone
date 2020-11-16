@@ -226,6 +226,43 @@ class MovieTestCase(unittest.TestCase):
         self.assertEqual(data['success'], False)
         self.assertEqual(data['message'], 'unprocessable')
 
+    # Test PATCH movies endpoint
+    def test_update_movie(self):
+        updated_movie = {
+            'title': 'Back to the Future Part II',
+            'release': '1989-11-22'
+        }
+
+        res = self.client().patch('/movies/2', json = updated_movie)
+        data = json.loads(res.data)
+
+        self.assertEqual(res.status_code, 200)
+        self.assertEqual(data['success'], True)
+        self.assertEqual(data['updated'], 2)
+        self.assertTrue(data['number_of_movies'])
+        self.assertTrue(len(data['movies']))
+
+    def test_422_if_update_movie_fails_from_empty_form(self):
+        res = self.client().patch('/movies/2')
+        data = json.loads(res.data)
+
+        self.assertEqual(res.status_code, 422)
+        self.assertEqual(data['success'], False)
+        self.assertEqual(data['message'], 'unprocessable')
+
+    def test_422_if_update_movie_fails_from_bad_form(self):
+        another_bad_movie = {
+            'title': 'Something Else',
+            'release': '!'
+        }
+
+        res = self.client().patch('/movies/2', json = another_bad_movie)
+        data = json.loads(res.data)
+
+        self.assertEqual(res.status_code, 422)
+        self.assertEqual(data['success'], False)
+        self.assertEqual(data['message'], 'unprocessable')
+
 
 if __name__ == "__main__":
     unittest.main()

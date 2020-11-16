@@ -65,7 +65,8 @@ def create_app(test_config=None):
                 'number_of_actors': len(Actor.query.all())
             })
 
-        except:
+        except BaseException as e:
+            print(e)
             abort(422)
 
     # POST (or create) an actor / actress
@@ -94,7 +95,8 @@ def create_app(test_config=None):
                 'number_of_actors': len(Actor.query.all())
             })
 
-        except:
+        except BaseException as e:
+            print(e)
             abort(422)
 
     # PATCH (or update) an actor / actress
@@ -129,7 +131,8 @@ def create_app(test_config=None):
                 'number_of_actors': len(Actor.query.all())
             })
 
-        except:
+        except BaseException as e:
+            print(e)
             abort(422)
 
 
@@ -169,7 +172,8 @@ def create_app(test_config=None):
                 'number_of_movies': len(Movie.query.all())
             })
 
-        except:
+        except BaseException as e:
+            print(e)
             abort(422)
 
     # POST (or create) a movie
@@ -197,9 +201,41 @@ def create_app(test_config=None):
                 'number_of_movies': len(Movie.query.all())
             })
 
-        except:
+        except BaseException as e:
+            print(e)
             abort(422)
 
+    # PATCH (or update) a movie
+    @app.route('/movies/<int:movie_id>', methods=['PATCH'])
+    def update_movie(movie_id):
+        try:
+            body = request.get_json()
+
+            movie = Movie.query.get(movie_id)
+            new_title = body.get('title', None)
+            new_release = body.get('release', None)
+
+            if new_title:
+                movie.title = new_title
+
+            if new_release:
+                movie.release = new_release
+
+            movie.update()
+
+            movies = Movie.query.order_by(Movie.id).all()
+            formatted_movies = {movie.id: movie.title for movie in movies}
+
+            return jsonify({
+                'success': True,
+                'updated': movie.id,
+                'movies': formatted_movies,
+                'number_of_movies': len(Movie.query.all())
+            })
+
+        except BaseException as e:
+            print(e)
+            abort(422)
 
 
     #--------------------------------------------------------------------------#
