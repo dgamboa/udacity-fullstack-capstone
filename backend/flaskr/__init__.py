@@ -41,7 +41,8 @@ def create_app(test_config=None):
 
     # GET all actors
     @app.route('/actors')
-    def get_actors():
+    @requires_auth('get:actors')
+    def get_actors(payload):
         actors = Actor.query.order_by(Actor.id).all()
         formatted_actors = {actor.id: actor.name for actor in actors}
 
