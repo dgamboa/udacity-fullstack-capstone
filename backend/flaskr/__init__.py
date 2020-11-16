@@ -28,6 +28,15 @@ def create_app(test_config=None):
     #--------------------------------------------------------------------------#
     # API Endpoints
     #--------------------------------------------------------------------------#
+    # Index route for home page
+    @app.route('/')
+    def home():
+        return jsonify({
+            'welcome': 'Welcome to Kane Films, executive producers connecting actors and movies',
+            'context': 'Capstone project for Udacity\'s Full Stack nanodegree',
+            'author': 'Daniel Gamboa',
+            'date': '2020-11-20'
+        })
 
     # GET all actors
     @app.route('/actors')
