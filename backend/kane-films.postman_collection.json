@@ -1,0 +1,881 @@
+{
+	"info": {
+		"_postman_id": "580efe6b-0620-47fe-8a87-ab12348f7f7b",
+		"name": "kane-films",
+		"description": "End points for each permission type in the Kane Films capstone app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "assistant",
+			"item": [
+				{
+					"name": "/actors",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImlrN04xYXV3bWUyT0pTT3BmaG1qOSJ9.eyJpc3MiOiJodHRwczovL2thbmUtZmlsbXMtY2Fwc3RvbmUudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmYjQyOGQ1MWJkYTAwMDA3NWUwZmRlNyIsImF1ZCI6InJlc291cmNlcyIsImlhdCI6MTYwNTY0Mjc0MSwiZXhwIjoxNjA1NzI5MTQxLCJhenAiOiJMWm82V3ltckYxQkFnUERxODBpVWZENnhObWFzdzNHcSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiXX0.xEi_0wWoX5jXmxUlvpsa4bKIbjqOKV5siKFPdaXDx1NjZlI0eim33JAPYJiSNbUBEUzwBpHq5lA6MtFh7nZi1bQkFFz6mpM2Yt8u6MTZMNPdqXmKtWGW2AC8KGyzdSkyfeT1hc9bpN-nfMoTs6ZR1zqF1bEI4jY5Wlego8EVLNyStIQoPZbJ2sicp5EiDzqyZQFKZohmOyXZ5yBhGJ0tBCY9Ejuq54pdc6E7tnjueGxCO0NckFSi_bMCERox8kQFtCh95hdZwcg4jVQ8cjA-IOtEoRhUX7FEa-QZVIjxKEwcL6MP1Y30SfbH8IvEjurVN2U99AmoY4XbtORjVCVFIA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/actors",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImlrN04xYXV3bWUyT0pTT3BmaG1qOSJ9.eyJpc3MiOiJodHRwczovL2thbmUtZmlsbXMtY2Fwc3RvbmUudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmYjQyOGQ1MWJkYTAwMDA3NWUwZmRlNyIsImF1ZCI6InJlc291cmNlcyIsImlhdCI6MTYwNTY0Mjc0MSwiZXhwIjoxNjA1NzI5MTQxLCJhenAiOiJMWm82V3ltckYxQkFnUERxODBpVWZENnhObWFzdzNHcSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiXX0.xEi_0wWoX5jXmxUlvpsa4bKIbjqOKV5siKFPdaXDx1NjZlI0eim33JAPYJiSNbUBEUzwBpHq5lA6MtFh7nZi1bQkFFz6mpM2Yt8u6MTZMNPdqXmKtWGW2AC8KGyzdSkyfeT1hc9bpN-nfMoTs6ZR1zqF1bEI4jY5Wlego8EVLNyStIQoPZbJ2sicp5EiDzqyZQFKZohmOyXZ5yBhGJ0tBCY9Ejuq54pdc6E7tnjueGxCO0NckFSi_bMCERox8kQFtCh95hdZwcg4jVQ8cjA-IOtEoRhUX7FEa-QZVIjxKEwcL6MP1Y30SfbH8IvEjurVN2U99AmoY4XbtORjVCVFIA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/actors",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors/1",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImlrN04xYXV3bWUyT0pTT3BmaG1qOSJ9.eyJpc3MiOiJodHRwczovL2thbmUtZmlsbXMtY2Fwc3RvbmUudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmYjQyOGQ1MWJkYTAwMDA3NWUwZmRlNyIsImF1ZCI6InJlc291cmNlcyIsImlhdCI6MTYwNTY0Mjc0MSwiZXhwIjoxNjA1NzI5MTQxLCJhenAiOiJMWm82V3ltckYxQkFnUERxODBpVWZENnhObWFzdzNHcSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiXX0.xEi_0wWoX5jXmxUlvpsa4bKIbjqOKV5siKFPdaXDx1NjZlI0eim33JAPYJiSNbUBEUzwBpHq5lA6MtFh7nZi1bQkFFz6mpM2Yt8u6MTZMNPdqXmKtWGW2AC8KGyzdSkyfeT1hc9bpN-nfMoTs6ZR1zqF1bEI4jY5Wlego8EVLNyStIQoPZbJ2sicp5EiDzqyZQFKZohmOyXZ5yBhGJ0tBCY9Ejuq54pdc6E7tnjueGxCO0NckFSi_bMCERox8kQFtCh95hdZwcg4jVQ8cjA-IOtEoRhUX7FEa-QZVIjxKEwcL6MP1Y30SfbH8IvEjurVN2U99AmoY4XbtORjVCVFIA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/actors/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"actors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors/2",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImlrN04xYXV3bWUyT0pTT3BmaG1qOSJ9.eyJpc3MiOiJodHRwczovL2thbmUtZmlsbXMtY2Fwc3RvbmUudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmYjQyOGQ1MWJkYTAwMDA3NWUwZmRlNyIsImF1ZCI6InJlc291cmNlcyIsImlhdCI6MTYwNTY0Mjc0MSwiZXhwIjoxNjA1NzI5MTQxLCJhenAiOiJMWm82V3ltckYxQkFnUERxODBpVWZENnhObWFzdzNHcSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiXX0.xEi_0wWoX5jXmxUlvpsa4bKIbjqOKV5siKFPdaXDx1NjZlI0eim33JAPYJiSNbUBEUzwBpHq5lA6MtFh7nZi1bQkFFz6mpM2Yt8u6MTZMNPdqXmKtWGW2AC8KGyzdSkyfeT1hc9bpN-nfMoTs6ZR1zqF1bEI4jY5Wlego8EVLNyStIQoPZbJ2sicp5EiDzqyZQFKZohmOyXZ5yBhGJ0tBCY9Ejuq54pdc6E7tnjueGxCO0NckFSi_bMCERox8kQFtCh95hdZwcg4jVQ8cjA-IOtEoRhUX7FEa-QZVIjxKEwcL6MP1Y30SfbH8IvEjurVN2U99AmoY4XbtORjVCVFIA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/actors/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"actors",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImlrN04xYXV3bWUyT0pTT3BmaG1qOSJ9.eyJpc3MiOiJodHRwczovL2thbmUtZmlsbXMtY2Fwc3RvbmUudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmYjQyOGQ1MWJkYTAwMDA3NWUwZmRlNyIsImF1ZCI6InJlc291cmNlcyIsImlhdCI6MTYwNTY0Mjc0MSwiZXhwIjoxNjA1NzI5MTQxLCJhenAiOiJMWm82V3ltckYxQkFnUERxODBpVWZENnhObWFzdzNHcSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiXX0.xEi_0wWoX5jXmxUlvpsa4bKIbjqOKV5siKFPdaXDx1NjZlI0eim33JAPYJiSNbUBEUzwBpHq5lA6MtFh7nZi1bQkFFz6mpM2Yt8u6MTZMNPdqXmKtWGW2AC8KGyzdSkyfeT1hc9bpN-nfMoTs6ZR1zqF1bEI4jY5Wlego8EVLNyStIQoPZbJ2sicp5EiDzqyZQFKZohmOyXZ5yBhGJ0tBCY9Ejuq54pdc6E7tnjueGxCO0NckFSi_bMCERox8kQFtCh95hdZwcg4jVQ8cjA-IOtEoRhUX7FEa-QZVIjxKEwcL6MP1Y30SfbH8IvEjurVN2U99AmoY4XbtORjVCVFIA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/movies",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImlrN04xYXV3bWUyT0pTT3BmaG1qOSJ9.eyJpc3MiOiJodHRwczovL2thbmUtZmlsbXMtY2Fwc3RvbmUudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmYjQyOGQ1MWJkYTAwMDA3NWUwZmRlNyIsImF1ZCI6InJlc291cmNlcyIsImlhdCI6MTYwNTY0Mjc0MSwiZXhwIjoxNjA1NzI5MTQxLCJhenAiOiJMWm82V3ltckYxQkFnUERxODBpVWZENnhObWFzdzNHcSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiXX0.xEi_0wWoX5jXmxUlvpsa4bKIbjqOKV5siKFPdaXDx1NjZlI0eim33JAPYJiSNbUBEUzwBpHq5lA6MtFh7nZi1bQkFFz6mpM2Yt8u6MTZMNPdqXmKtWGW2AC8KGyzdSkyfeT1hc9bpN-nfMoTs6ZR1zqF1bEI4jY5Wlego8EVLNyStIQoPZbJ2sicp5EiDzqyZQFKZohmOyXZ5yBhGJ0tBCY9Ejuq54pdc6E7tnjueGxCO0NckFSi_bMCERox8kQFtCh95hdZwcg4jVQ8cjA-IOtEoRhUX7FEa-QZVIjxKEwcL6MP1Y30SfbH8IvEjurVN2U99AmoY4XbtORjVCVFIA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/movies",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/1",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImlrN04xYXV3bWUyT0pTT3BmaG1qOSJ9.eyJpc3MiOiJodHRwczovL2thbmUtZmlsbXMtY2Fwc3RvbmUudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmYjQyOGQ1MWJkYTAwMDA3NWUwZmRlNyIsImF1ZCI6InJlc291cmNlcyIsImlhdCI6MTYwNTY0Mjc0MSwiZXhwIjoxNjA1NzI5MTQxLCJhenAiOiJMWm82V3ltckYxQkFnUERxODBpVWZENnhObWFzdzNHcSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiXX0.xEi_0wWoX5jXmxUlvpsa4bKIbjqOKV5siKFPdaXDx1NjZlI0eim33JAPYJiSNbUBEUzwBpHq5lA6MtFh7nZi1bQkFFz6mpM2Yt8u6MTZMNPdqXmKtWGW2AC8KGyzdSkyfeT1hc9bpN-nfMoTs6ZR1zqF1bEI4jY5Wlego8EVLNyStIQoPZbJ2sicp5EiDzqyZQFKZohmOyXZ5yBhGJ0tBCY9Ejuq54pdc6E7tnjueGxCO0NckFSi_bMCERox8kQFtCh95hdZwcg4jVQ8cjA-IOtEoRhUX7FEa-QZVIjxKEwcL6MP1Y30SfbH8IvEjurVN2U99AmoY4XbtORjVCVFIA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/movies/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/2",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImlrN04xYXV3bWUyT0pTT3BmaG1qOSJ9.eyJpc3MiOiJodHRwczovL2thbmUtZmlsbXMtY2Fwc3RvbmUudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmYjQyOGQ1MWJkYTAwMDA3NWUwZmRlNyIsImF1ZCI6InJlc291cmNlcyIsImlhdCI6MTYwNTY0Mjc0MSwiZXhwIjoxNjA1NzI5MTQxLCJhenAiOiJMWm82V3ltckYxQkFnUERxODBpVWZENnhObWFzdzNHcSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiXX0.xEi_0wWoX5jXmxUlvpsa4bKIbjqOKV5siKFPdaXDx1NjZlI0eim33JAPYJiSNbUBEUzwBpHq5lA6MtFh7nZi1bQkFFz6mpM2Yt8u6MTZMNPdqXmKtWGW2AC8KGyzdSkyfeT1hc9bpN-nfMoTs6ZR1zqF1bEI4jY5Wlego8EVLNyStIQoPZbJ2sicp5EiDzqyZQFKZohmOyXZ5yBhGJ0tBCY9Ejuq54pdc6E7tnjueGxCO0NckFSi_bMCERox8kQFtCh95hdZwcg4jVQ8cjA-IOtEoRhUX7FEa-QZVIjxKEwcL6MP1Y30SfbH8IvEjurVN2U99AmoY4XbtORjVCVFIA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/movies/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"movies",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "director",
+			"item": [
+				{
+					"name": "/actors",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImlrN04xYXV3bWUyT0pTT3BmaG1qOSJ9.eyJpc3MiOiJodHRwczovL2thbmUtZmlsbXMtY2Fwc3RvbmUudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmYjQyODM0MGJkNGMyMDA2OGY1Zjg3ZiIsImF1ZCI6InJlc291cmNlcyIsImlhdCI6MTYwNTY0MjYzMSwiZXhwIjoxNjA1NzI5MDMxLCJhenAiOiJMWm82V3ltckYxQkFnUERxODBpVWZENnhObWFzdzNHcSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIiwicGF0Y2g6YWN0b3JzIiwicGF0Y2g6bW92aWVzIiwicG9zdDphY3RvcnMiXX0.qhcuhLoKkmXWMYWqRX6nlCwbIdVhz3XUWjWuTMcH5vIuuQ4Zbiok6WQbe-z9urHsJH7T3Q95rVwyNH--oRsCGbiv2WX5Tg7OkuIICYGclj4UrY2VfZSx17STXGJ4begHKMZasSvcK3wyunhYJ_3mEy9ttcMrjDwxkaZiRJKoNDgfYMzVtPz5MqSQXfLOtTUblaCzwimCg_mR77HRyuCd8cD5GTJMNLh5ZLoNlAT6aEdZ3D8VbK2X5gc0Azxehem_1nxVZkNBKynp2x2Ti3q2GyxXVU9YWhtgaYFfZDpxTHriuGwv0ttc8bXg8QjZ3zZh7ao-KTf1DM3BO8Z1xDRFVw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/actors",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImlrN04xYXV3bWUyT0pTT3BmaG1qOSJ9.eyJpc3MiOiJodHRwczovL2thbmUtZmlsbXMtY2Fwc3RvbmUudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmYjQyODM0MGJkNGMyMDA2OGY1Zjg3ZiIsImF1ZCI6InJlc291cmNlcyIsImlhdCI6MTYwNTY0MjYzMSwiZXhwIjoxNjA1NzI5MDMxLCJhenAiOiJMWm82V3ltckYxQkFnUERxODBpVWZENnhObWFzdzNHcSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIiwicGF0Y2g6YWN0b3JzIiwicGF0Y2g6bW92aWVzIiwicG9zdDphY3RvcnMiXX0.qhcuhLoKkmXWMYWqRX6nlCwbIdVhz3XUWjWuTMcH5vIuuQ4Zbiok6WQbe-z9urHsJH7T3Q95rVwyNH--oRsCGbiv2WX5Tg7OkuIICYGclj4UrY2VfZSx17STXGJ4begHKMZasSvcK3wyunhYJ_3mEy9ttcMrjDwxkaZiRJKoNDgfYMzVtPz5MqSQXfLOtTUblaCzwimCg_mR77HRyuCd8cD5GTJMNLh5ZLoNlAT6aEdZ3D8VbK2X5gc0Azxehem_1nxVZkNBKynp2x2Ti3q2GyxXVU9YWhtgaYFfZDpxTHriuGwv0ttc8bXg8QjZ3zZh7ao-KTf1DM3BO8Z1xDRFVw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Michael J. Fox\",\n    \"age\": 59,\n    \"gender\": \"M\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/actors",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors/1",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImlrN04xYXV3bWUyT0pTT3BmaG1qOSJ9.eyJpc3MiOiJodHRwczovL2thbmUtZmlsbXMtY2Fwc3RvbmUudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmYjQyODM0MGJkNGMyMDA2OGY1Zjg3ZiIsImF1ZCI6InJlc291cmNlcyIsImlhdCI6MTYwNTY0MjYzMSwiZXhwIjoxNjA1NzI5MDMxLCJhenAiOiJMWm82V3ltckYxQkFnUERxODBpVWZENnhObWFzdzNHcSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIiwicGF0Y2g6YWN0b3JzIiwicGF0Y2g6bW92aWVzIiwicG9zdDphY3RvcnMiXX0.qhcuhLoKkmXWMYWqRX6nlCwbIdVhz3XUWjWuTMcH5vIuuQ4Zbiok6WQbe-z9urHsJH7T3Q95rVwyNH--oRsCGbiv2WX5Tg7OkuIICYGclj4UrY2VfZSx17STXGJ4begHKMZasSvcK3wyunhYJ_3mEy9ttcMrjDwxkaZiRJKoNDgfYMzVtPz5MqSQXfLOtTUblaCzwimCg_mR77HRyuCd8cD5GTJMNLh5ZLoNlAT6aEdZ3D8VbK2X5gc0Azxehem_1nxVZkNBKynp2x2Ti3q2GyxXVU9YWhtgaYFfZDpxTHriuGwv0ttc8bXg8QjZ3zZh7ao-KTf1DM3BO8Z1xDRFVw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Oprah Winfrey\",\n    \"age\": 66,\n    \"gender\": \"F\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/actors/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"actors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors/2",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImlrN04xYXV3bWUyT0pTT3BmaG1qOSJ9.eyJpc3MiOiJodHRwczovL2thbmUtZmlsbXMtY2Fwc3RvbmUudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmYjQyODM0MGJkNGMyMDA2OGY1Zjg3ZiIsImF1ZCI6InJlc291cmNlcyIsImlhdCI6MTYwNTY0MjYzMSwiZXhwIjoxNjA1NzI5MDMxLCJhenAiOiJMWm82V3ltckYxQkFnUERxODBpVWZENnhObWFzdzNHcSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIiwicGF0Y2g6YWN0b3JzIiwicGF0Y2g6bW92aWVzIiwicG9zdDphY3RvcnMiXX0.qhcuhLoKkmXWMYWqRX6nlCwbIdVhz3XUWjWuTMcH5vIuuQ4Zbiok6WQbe-z9urHsJH7T3Q95rVwyNH--oRsCGbiv2WX5Tg7OkuIICYGclj4UrY2VfZSx17STXGJ4begHKMZasSvcK3wyunhYJ_3mEy9ttcMrjDwxkaZiRJKoNDgfYMzVtPz5MqSQXfLOtTUblaCzwimCg_mR77HRyuCd8cD5GTJMNLh5ZLoNlAT6aEdZ3D8VbK2X5gc0Azxehem_1nxVZkNBKynp2x2Ti3q2GyxXVU9YWhtgaYFfZDpxTHriuGwv0ttc8bXg8QjZ3zZh7ao-KTf1DM3BO8Z1xDRFVw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/actors/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"actors",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImlrN04xYXV3bWUyT0pTT3BmaG1qOSJ9.eyJpc3MiOiJodHRwczovL2thbmUtZmlsbXMtY2Fwc3RvbmUudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmYjQyODM0MGJkNGMyMDA2OGY1Zjg3ZiIsImF1ZCI6InJlc291cmNlcyIsImlhdCI6MTYwNTY0MjYzMSwiZXhwIjoxNjA1NzI5MDMxLCJhenAiOiJMWm82V3ltckYxQkFnUERxODBpVWZENnhObWFzdzNHcSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIiwicGF0Y2g6YWN0b3JzIiwicGF0Y2g6bW92aWVzIiwicG9zdDphY3RvcnMiXX0.qhcuhLoKkmXWMYWqRX6nlCwbIdVhz3XUWjWuTMcH5vIuuQ4Zbiok6WQbe-z9urHsJH7T3Q95rVwyNH--oRsCGbiv2WX5Tg7OkuIICYGclj4UrY2VfZSx17STXGJ4begHKMZasSvcK3wyunhYJ_3mEy9ttcMrjDwxkaZiRJKoNDgfYMzVtPz5MqSQXfLOtTUblaCzwimCg_mR77HRyuCd8cD5GTJMNLh5ZLoNlAT6aEdZ3D8VbK2X5gc0Azxehem_1nxVZkNBKynp2x2Ti3q2GyxXVU9YWhtgaYFfZDpxTHriuGwv0ttc8bXg8QjZ3zZh7ao-KTf1DM3BO8Z1xDRFVw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/movies",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImlrN04xYXV3bWUyT0pTT3BmaG1qOSJ9.eyJpc3MiOiJodHRwczovL2thbmUtZmlsbXMtY2Fwc3RvbmUudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmYjQyODM0MGJkNGMyMDA2OGY1Zjg3ZiIsImF1ZCI6InJlc291cmNlcyIsImlhdCI6MTYwNTY0MjYzMSwiZXhwIjoxNjA1NzI5MDMxLCJhenAiOiJMWm82V3ltckYxQkFnUERxODBpVWZENnhObWFzdzNHcSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIiwicGF0Y2g6YWN0b3JzIiwicGF0Y2g6bW92aWVzIiwicG9zdDphY3RvcnMiXX0.qhcuhLoKkmXWMYWqRX6nlCwbIdVhz3XUWjWuTMcH5vIuuQ4Zbiok6WQbe-z9urHsJH7T3Q95rVwyNH--oRsCGbiv2WX5Tg7OkuIICYGclj4UrY2VfZSx17STXGJ4begHKMZasSvcK3wyunhYJ_3mEy9ttcMrjDwxkaZiRJKoNDgfYMzVtPz5MqSQXfLOtTUblaCzwimCg_mR77HRyuCd8cD5GTJMNLh5ZLoNlAT6aEdZ3D8VbK2X5gc0Azxehem_1nxVZkNBKynp2x2Ti3q2GyxXVU9YWhtgaYFfZDpxTHriuGwv0ttc8bXg8QjZ3zZh7ao-KTf1DM3BO8Z1xDRFVw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Back to the Future\",\n    \"release\": \"1985-07-03\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/movies",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/1",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImlrN04xYXV3bWUyT0pTT3BmaG1qOSJ9.eyJpc3MiOiJodHRwczovL2thbmUtZmlsbXMtY2Fwc3RvbmUudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmYjQyODM0MGJkNGMyMDA2OGY1Zjg3ZiIsImF1ZCI6InJlc291cmNlcyIsImlhdCI6MTYwNTY0MjYzMSwiZXhwIjoxNjA1NzI5MDMxLCJhenAiOiJMWm82V3ltckYxQkFnUERxODBpVWZENnhObWFzdzNHcSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIiwicGF0Y2g6YWN0b3JzIiwicGF0Y2g6bW92aWVzIiwicG9zdDphY3RvcnMiXX0.qhcuhLoKkmXWMYWqRX6nlCwbIdVhz3XUWjWuTMcH5vIuuQ4Zbiok6WQbe-z9urHsJH7T3Q95rVwyNH--oRsCGbiv2WX5Tg7OkuIICYGclj4UrY2VfZSx17STXGJ4begHKMZasSvcK3wyunhYJ_3mEy9ttcMrjDwxkaZiRJKoNDgfYMzVtPz5MqSQXfLOtTUblaCzwimCg_mR77HRyuCd8cD5GTJMNLh5ZLoNlAT6aEdZ3D8VbK2X5gc0Azxehem_1nxVZkNBKynp2x2Ti3q2GyxXVU9YWhtgaYFfZDpxTHriuGwv0ttc8bXg8QjZ3zZh7ao-KTf1DM3BO8Z1xDRFVw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Back to the Future Part II\",\n    \"release\": \"1989-11-22\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/movies/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/2",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImlrN04xYXV3bWUyT0pTT3BmaG1qOSJ9.eyJpc3MiOiJodHRwczovL2thbmUtZmlsbXMtY2Fwc3RvbmUudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmYjQyODM0MGJkNGMyMDA2OGY1Zjg3ZiIsImF1ZCI6InJlc291cmNlcyIsImlhdCI6MTYwNTY0MjYzMSwiZXhwIjoxNjA1NzI5MDMxLCJhenAiOiJMWm82V3ltckYxQkFnUERxODBpVWZENnhObWFzdzNHcSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIiwicGF0Y2g6YWN0b3JzIiwicGF0Y2g6bW92aWVzIiwicG9zdDphY3RvcnMiXX0.qhcuhLoKkmXWMYWqRX6nlCwbIdVhz3XUWjWuTMcH5vIuuQ4Zbiok6WQbe-z9urHsJH7T3Q95rVwyNH--oRsCGbiv2WX5Tg7OkuIICYGclj4UrY2VfZSx17STXGJ4begHKMZasSvcK3wyunhYJ_3mEy9ttcMrjDwxkaZiRJKoNDgfYMzVtPz5MqSQXfLOtTUblaCzwimCg_mR77HRyuCd8cD5GTJMNLh5ZLoNlAT6aEdZ3D8VbK2X5gc0Azxehem_1nxVZkNBKynp2x2Ti3q2GyxXVU9YWhtgaYFfZDpxTHriuGwv0ttc8bXg8QjZ3zZh7ao-KTf1DM3BO8Z1xDRFVw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/movies/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"movies",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "producer",
+			"item": [
+				{
+					"name": "/actors",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImlrN04xYXV3bWUyT0pTT3BmaG1qOSJ9.eyJpc3MiOiJodHRwczovL2thbmUtZmlsbXMtY2Fwc3RvbmUudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmYjJkMDE3NjYyNzVkMDA2ZTVhMjM3MSIsImF1ZCI6InJlc291cmNlcyIsImlhdCI6MTYwNTY0MjcwOCwiZXhwIjoxNjA1NzI5MTA4LCJhenAiOiJMWm82V3ltckYxQkFnUERxODBpVWZENnhObWFzdzNHcSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImRlbGV0ZTptb3ZpZXMiLCJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIiwicG9zdDptb3ZpZXMiXX0.HGGvqvu1fAL1VtrcRnWKKwqmN6gZqM3tCCy3re8RTtfFxiVOcZMwKhww74AdOVxuX7YAkGuUMh8sBUjy76RMp95gHhbnnzz1NlDo8ICqfhbYCqLg3-asZIsq3XSTjvo5RxeH25DCoSySUu0gfq2Iy3U-fdW-jwLxp58lko-iZtJT1PhC9www92YEs3If_WKnUklqNnyYuPvNkEhnN-LY31nI1f92_EMmdV1waCACNjYLlefhVFMAN-F2wJD0_Axg04ufwQd78txmnmqbm7J3Zt1GIZbg5IM-9DuYP12HA8mU-RNDAL3oQL2JeDLbHVdvqCANbpTlljyPooAti0Or3A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/actors",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImlrN04xYXV3bWUyT0pTT3BmaG1qOSJ9.eyJpc3MiOiJodHRwczovL2thbmUtZmlsbXMtY2Fwc3RvbmUudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmYjJkMDE3NjYyNzVkMDA2ZTVhMjM3MSIsImF1ZCI6InJlc291cmNlcyIsImlhdCI6MTYwNTY0MjcwOCwiZXhwIjoxNjA1NzI5MTA4LCJhenAiOiJMWm82V3ltckYxQkFnUERxODBpVWZENnhObWFzdzNHcSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImRlbGV0ZTptb3ZpZXMiLCJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIiwicG9zdDptb3ZpZXMiXX0.HGGvqvu1fAL1VtrcRnWKKwqmN6gZqM3tCCy3re8RTtfFxiVOcZMwKhww74AdOVxuX7YAkGuUMh8sBUjy76RMp95gHhbnnzz1NlDo8ICqfhbYCqLg3-asZIsq3XSTjvo5RxeH25DCoSySUu0gfq2Iy3U-fdW-jwLxp58lko-iZtJT1PhC9www92YEs3If_WKnUklqNnyYuPvNkEhnN-LY31nI1f92_EMmdV1waCACNjYLlefhVFMAN-F2wJD0_Axg04ufwQd78txmnmqbm7J3Zt1GIZbg5IM-9DuYP12HA8mU-RNDAL3oQL2JeDLbHVdvqCANbpTlljyPooAti0Or3A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Michael J. Fox\",\n    \"age\": 59,\n    \"gender\": \"M\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/actors",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors/1",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImlrN04xYXV3bWUyT0pTT3BmaG1qOSJ9.eyJpc3MiOiJodHRwczovL2thbmUtZmlsbXMtY2Fwc3RvbmUudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmYjJkMDE3NjYyNzVkMDA2ZTVhMjM3MSIsImF1ZCI6InJlc291cmNlcyIsImlhdCI6MTYwNTY0MjcwOCwiZXhwIjoxNjA1NzI5MTA4LCJhenAiOiJMWm82V3ltckYxQkFnUERxODBpVWZENnhObWFzdzNHcSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImRlbGV0ZTptb3ZpZXMiLCJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIiwicG9zdDptb3ZpZXMiXX0.HGGvqvu1fAL1VtrcRnWKKwqmN6gZqM3tCCy3re8RTtfFxiVOcZMwKhww74AdOVxuX7YAkGuUMh8sBUjy76RMp95gHhbnnzz1NlDo8ICqfhbYCqLg3-asZIsq3XSTjvo5RxeH25DCoSySUu0gfq2Iy3U-fdW-jwLxp58lko-iZtJT1PhC9www92YEs3If_WKnUklqNnyYuPvNkEhnN-LY31nI1f92_EMmdV1waCACNjYLlefhVFMAN-F2wJD0_Axg04ufwQd78txmnmqbm7J3Zt1GIZbg5IM-9DuYP12HA8mU-RNDAL3oQL2JeDLbHVdvqCANbpTlljyPooAti0Or3A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Oprah Winfrey\",\n    \"age\": 66,\n    \"gender\": \"F\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/actors/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"actors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors/2",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImlrN04xYXV3bWUyT0pTT3BmaG1qOSJ9.eyJpc3MiOiJodHRwczovL2thbmUtZmlsbXMtY2Fwc3RvbmUudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmYjJkMDE3NjYyNzVkMDA2ZTVhMjM3MSIsImF1ZCI6InJlc291cmNlcyIsImlhdCI6MTYwNTY0MjcwOCwiZXhwIjoxNjA1NzI5MTA4LCJhenAiOiJMWm82V3ltckYxQkFnUERxODBpVWZENnhObWFzdzNHcSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImRlbGV0ZTptb3ZpZXMiLCJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIiwicG9zdDptb3ZpZXMiXX0.HGGvqvu1fAL1VtrcRnWKKwqmN6gZqM3tCCy3re8RTtfFxiVOcZMwKhww74AdOVxuX7YAkGuUMh8sBUjy76RMp95gHhbnnzz1NlDo8ICqfhbYCqLg3-asZIsq3XSTjvo5RxeH25DCoSySUu0gfq2Iy3U-fdW-jwLxp58lko-iZtJT1PhC9www92YEs3If_WKnUklqNnyYuPvNkEhnN-LY31nI1f92_EMmdV1waCACNjYLlefhVFMAN-F2wJD0_Axg04ufwQd78txmnmqbm7J3Zt1GIZbg5IM-9DuYP12HA8mU-RNDAL3oQL2JeDLbHVdvqCANbpTlljyPooAti0Or3A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/actors/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"actors",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImlrN04xYXV3bWUyT0pTT3BmaG1qOSJ9.eyJpc3MiOiJodHRwczovL2thbmUtZmlsbXMtY2Fwc3RvbmUudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmYjJkMDE3NjYyNzVkMDA2ZTVhMjM3MSIsImF1ZCI6InJlc291cmNlcyIsImlhdCI6MTYwNTY0MjcwOCwiZXhwIjoxNjA1NzI5MTA4LCJhenAiOiJMWm82V3ltckYxQkFnUERxODBpVWZENnhObWFzdzNHcSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImRlbGV0ZTptb3ZpZXMiLCJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIiwicG9zdDptb3ZpZXMiXX0.HGGvqvu1fAL1VtrcRnWKKwqmN6gZqM3tCCy3re8RTtfFxiVOcZMwKhww74AdOVxuX7YAkGuUMh8sBUjy76RMp95gHhbnnzz1NlDo8ICqfhbYCqLg3-asZIsq3XSTjvo5RxeH25DCoSySUu0gfq2Iy3U-fdW-jwLxp58lko-iZtJT1PhC9www92YEs3If_WKnUklqNnyYuPvNkEhnN-LY31nI1f92_EMmdV1waCACNjYLlefhVFMAN-F2wJD0_Axg04ufwQd78txmnmqbm7J3Zt1GIZbg5IM-9DuYP12HA8mU-RNDAL3oQL2JeDLbHVdvqCANbpTlljyPooAti0Or3A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/movies",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImlrN04xYXV3bWUyT0pTT3BmaG1qOSJ9.eyJpc3MiOiJodHRwczovL2thbmUtZmlsbXMtY2Fwc3RvbmUudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmYjJkMDE3NjYyNzVkMDA2ZTVhMjM3MSIsImF1ZCI6InJlc291cmNlcyIsImlhdCI6MTYwNTY0MjcwOCwiZXhwIjoxNjA1NzI5MTA4LCJhenAiOiJMWm82V3ltckYxQkFnUERxODBpVWZENnhObWFzdzNHcSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImRlbGV0ZTptb3ZpZXMiLCJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIiwicG9zdDptb3ZpZXMiXX0.HGGvqvu1fAL1VtrcRnWKKwqmN6gZqM3tCCy3re8RTtfFxiVOcZMwKhww74AdOVxuX7YAkGuUMh8sBUjy76RMp95gHhbnnzz1NlDo8ICqfhbYCqLg3-asZIsq3XSTjvo5RxeH25DCoSySUu0gfq2Iy3U-fdW-jwLxp58lko-iZtJT1PhC9www92YEs3If_WKnUklqNnyYuPvNkEhnN-LY31nI1f92_EMmdV1waCACNjYLlefhVFMAN-F2wJD0_Axg04ufwQd78txmnmqbm7J3Zt1GIZbg5IM-9DuYP12HA8mU-RNDAL3oQL2JeDLbHVdvqCANbpTlljyPooAti0Or3A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Back to the Future\",\n    \"release\": \"1985-07-03\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/movies",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/1",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImlrN04xYXV3bWUyT0pTT3BmaG1qOSJ9.eyJpc3MiOiJodHRwczovL2thbmUtZmlsbXMtY2Fwc3RvbmUudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmYjJkMDE3NjYyNzVkMDA2ZTVhMjM3MSIsImF1ZCI6InJlc291cmNlcyIsImlhdCI6MTYwNTY0MjcwOCwiZXhwIjoxNjA1NzI5MTA4LCJhenAiOiJMWm82V3ltckYxQkFnUERxODBpVWZENnhObWFzdzNHcSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImRlbGV0ZTptb3ZpZXMiLCJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIiwicG9zdDptb3ZpZXMiXX0.HGGvqvu1fAL1VtrcRnWKKwqmN6gZqM3tCCy3re8RTtfFxiVOcZMwKhww74AdOVxuX7YAkGuUMh8sBUjy76RMp95gHhbnnzz1NlDo8ICqfhbYCqLg3-asZIsq3XSTjvo5RxeH25DCoSySUu0gfq2Iy3U-fdW-jwLxp58lko-iZtJT1PhC9www92YEs3If_WKnUklqNnyYuPvNkEhnN-LY31nI1f92_EMmdV1waCACNjYLlefhVFMAN-F2wJD0_Axg04ufwQd78txmnmqbm7J3Zt1GIZbg5IM-9DuYP12HA8mU-RNDAL3oQL2JeDLbHVdvqCANbpTlljyPooAti0Or3A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Back to the Future Part II\",\n    \"release\": \"1989-11-22\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/movies/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/2",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImlrN04xYXV3bWUyT0pTT3BmaG1qOSJ9.eyJpc3MiOiJodHRwczovL2thbmUtZmlsbXMtY2Fwc3RvbmUudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmYjJkMDE3NjYyNzVkMDA2ZTVhMjM3MSIsImF1ZCI6InJlc291cmNlcyIsImlhdCI6MTYwNTY0MjcwOCwiZXhwIjoxNjA1NzI5MTA4LCJhenAiOiJMWm82V3ltckYxQkFnUERxODBpVWZENnhObWFzdzNHcSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImRlbGV0ZTptb3ZpZXMiLCJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIiwicG9zdDptb3ZpZXMiXX0.HGGvqvu1fAL1VtrcRnWKKwqmN6gZqM3tCCy3re8RTtfFxiVOcZMwKhww74AdOVxuX7YAkGuUMh8sBUjy76RMp95gHhbnnzz1NlDo8ICqfhbYCqLg3-asZIsq3XSTjvo5RxeH25DCoSySUu0gfq2Iy3U-fdW-jwLxp58lko-iZtJT1PhC9www92YEs3If_WKnUklqNnyYuPvNkEhnN-LY31nI1f92_EMmdV1waCACNjYLlefhVFMAN-F2wJD0_Axg04ufwQd78txmnmqbm7J3Zt1GIZbg5IM-9DuYP12HA8mU-RNDAL3oQL2JeDLbHVdvqCANbpTlljyPooAti0Or3A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/movies/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"movies",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
