@@ -31,7 +31,7 @@ def get_token_auth_header():
 
     parts = auth.split()
 
-    if parts[0].lower != 'bearer':
+    if parts[0].lower() != 'bearer':
         raise AuthError({
             'code': 'invalid_header',
             'description': 'Authorization must start with "Bearer".'
@@ -54,7 +54,7 @@ def get_token_auth_header():
 # Method that verifies the validity of the token
 # Second input method into the requires_auth authentication method
 def verify_decode_jwt(token):
-    jsonurl = urlopen(f'https://{AUTH0_DOMAIN}/.well-known/jwks.json)
+    jsonurl = urlopen(f'https://{AUTH0_DOMAIN}/.well-known/jwks.json')
     jwks = json.loads(jsonurl.read())
     unverified_header = jwt.get_unverified_header(token)
     rsa_key = {}
@@ -117,7 +117,7 @@ def check_permissions(permission, payload):
     if 'permissions' not in payload:
         raise AuthError({
             'code': 'invalid_claims',
-            'description': 'Permissions not included in JWT'
+            'description': 'Permissions not included in JWT.'
         }, 400)
 
     if permission not in payload['permissions']:
@@ -141,7 +141,8 @@ def requires_auth(permission=''):
                 logging.exception('Error caught in payload')
                 raise AuthError({
                     'code': 'unauthorized',
-                    'description': 'User does not have the required permissions.'
+                    'description': 'User does not have the \
+                    required permissions.'
                 }, 401)
             check_permissions(permission, payload)
 
