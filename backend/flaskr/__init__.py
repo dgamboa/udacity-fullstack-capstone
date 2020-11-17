@@ -58,7 +58,8 @@ def create_app(test_config=None):
 
     # DELETE an actor / actress
     @app.route('/actors/<int:actor_id>', methods=['DELETE'])
-    def delete_actor(actor_id):
+    @requires_auth('delete:actors')
+    def delete_actor(payload, actor_id):
         try:
             actor = Actor.query.filter(Actor.id == actor_id).one_or_none()
 
@@ -83,7 +84,8 @@ def create_app(test_config=None):
 
     # POST (or create) an actor / actress
     @app.route('/actors', methods=['POST'])
-    def create_actor():
+    @requires_auth('post:actors')
+    def create_actor(payload):
         body = request.get_json()
 
         if body == None:
@@ -113,7 +115,8 @@ def create_app(test_config=None):
 
     # PATCH (or update) an actor / actress
     @app.route('/actors/<int:actor_id>', methods=['PATCH'])
-    def update_actor(actor_id):
+    @requires_auth('patch:actors')
+    def update_actor(payload, actor_id):
         try:
             body = request.get_json()
 
@@ -150,7 +153,8 @@ def create_app(test_config=None):
 
     # GET all movies
     @app.route('/movies')
-    def get_movies():
+    @requires_auth('get:movies')
+    def get_movies(payload):
         movies = Movie.query.order_by(Movie.id).all()
         formatted_movies = {movie.id: movie.title for movie in movies}
 
@@ -165,7 +169,8 @@ def create_app(test_config=None):
 
     # DELETE a movie
     @app.route('/movies/<int:movie_id>', methods=['DELETE'])
-    def delete_movie(movie_id):
+    @requires_auth('delete:movies')
+    def delete_movie(payload, movie_id):
         try:
             movie = Movie.query.filter(Movie.id == movie_id).one_or_none()
 
@@ -190,7 +195,8 @@ def create_app(test_config=None):
 
     # POST (or create) a movie
     @app.route('/movies', methods=['POST'])
-    def create_movie():
+    @requires_auth('post:movies')
+    def create_movie(payload):
         body = request.get_json()
 
         if body == None:
@@ -219,7 +225,8 @@ def create_app(test_config=None):
 
     # PATCH (or update) a movie
     @app.route('/movies/<int:movie_id>', methods=['PATCH'])
-    def update_movie(movie_id):
+    @requires_auth('patch:movies')
+    def update_movie(payload, movie_id):
         try:
             body = request.get_json()
 
