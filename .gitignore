@@ -4,6 +4,7 @@ env/
 .vscode/
 __pycache__/
 backend/__pycache__/
+backend/setup.sh
 
 # OS generated files #
 ######################
