@@ -6,6 +6,12 @@ from flask_sqlalchemy import SQLAlchemy
 from flaskr import create_app
 from models import setup_db, Actor, Movie, actor_movies
 
+#------------------------------------------------------------------------------#
+# Actor model test suite
+#------------------------------------------------------------------------------#
+assistant_header = 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImlrN04xYXV3bWUyT0pTT3BmaG1qOSJ9.eyJpc3MiOiJodHRwczovL2thbmUtZmlsbXMtY2Fwc3RvbmUudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmYjQyOGQ1MWJkYTAwMDA3NWUwZmRlNyIsImF1ZCI6InJlc291cmNlcyIsImlhdCI6MTYwNTY0Mjc0MSwiZXhwIjoxNjA1NzI5MTQxLCJhenAiOiJMWm82V3ltckYxQkFnUERxODBpVWZENnhObWFzdzNHcSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiXX0.xEi_0wWoX5jXmxUlvpsa4bKIbjqOKV5siKFPdaXDx1NjZlI0eim33JAPYJiSNbUBEUzwBpHq5lA6MtFh7nZi1bQkFFz6mpM2Yt8u6MTZMNPdqXmKtWGW2AC8KGyzdSkyfeT1hc9bpN-nfMoTs6ZR1zqF1bEI4jY5Wlego8EVLNyStIQoPZbJ2sicp5EiDzqyZQFKZohmOyXZ5yBhGJ0tBCY9Ejuq54pdc6E7tnjueGxCO0NckFSi_bMCERox8kQFtCh95hdZwcg4jVQ8cjA-IOtEoRhUX7FEa-QZVIjxKEwcL6MP1Y30SfbH8IvEjurVN2U99AmoY4XbtORjVCVFIA'
+director_header = 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImlrN04xYXV3bWUyT0pTT3BmaG1qOSJ9.eyJpc3MiOiJodHRwczovL2thbmUtZmlsbXMtY2Fwc3RvbmUudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmYjQyODM0MGJkNGMyMDA2OGY1Zjg3ZiIsImF1ZCI6InJlc291cmNlcyIsImlhdCI6MTYwNTY0MjYzMSwiZXhwIjoxNjA1NzI5MDMxLCJhenAiOiJMWm82V3ltckYxQkFnUERxODBpVWZENnhObWFzdzNHcSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIiwicGF0Y2g6YWN0b3JzIiwicGF0Y2g6bW92aWVzIiwicG9zdDphY3RvcnMiXX0.qhcuhLoKkmXWMYWqRX6nlCwbIdVhz3XUWjWuTMcH5vIuuQ4Zbiok6WQbe-z9urHsJH7T3Q95rVwyNH--oRsCGbiv2WX5Tg7OkuIICYGclj4UrY2VfZSx17STXGJ4begHKMZasSvcK3wyunhYJ_3mEy9ttcMrjDwxkaZiRJKoNDgfYMzVtPz5MqSQXfLOtTUblaCzwimCg_mR77HRyuCd8cD5GTJMNLh5ZLoNlAT6aEdZ3D8VbK2X5gc0Azxehem_1nxVZkNBKynp2x2Ti3q2GyxXVU9YWhtgaYFfZDpxTHriuGwv0ttc8bXg8QjZ3zZh7ao-KTf1DM3BO8Z1xDRFVw'
+producer_header = 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImlrN04xYXV3bWUyT0pTT3BmaG1qOSJ9.eyJpc3MiOiJodHRwczovL2thbmUtZmlsbXMtY2Fwc3RvbmUudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmYjJkMDE3NjYyNzVkMDA2ZTVhMjM3MSIsImF1ZCI6InJlc291cmNlcyIsImlhdCI6MTYwNTY0MjcwOCwiZXhwIjoxNjA1NzI5MTA4LCJhenAiOiJMWm82V3ltckYxQkFnUERxODBpVWZENnhObWFzdzNHcSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImRlbGV0ZTptb3ZpZXMiLCJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIiwicG9zdDptb3ZpZXMiXX0.HGGvqvu1fAL1VtrcRnWKKwqmN6gZqM3tCCy3re8RTtfFxiVOcZMwKhww74AdOVxuX7YAkGuUMh8sBUjy76RMp95gHhbnnzz1NlDo8ICqfhbYCqLg3-asZIsq3XSTjvo5RxeH25DCoSySUu0gfq2Iy3U-fdW-jwLxp58lko-iZtJT1PhC9www92YEs3If_WKnUklqNnyYuPvNkEhnN-LY31nI1f92_EMmdV1waCACNjYLlefhVFMAN-F2wJD0_Axg04ufwQd78txmnmqbm7J3Zt1GIZbg5IM-9DuYP12HA8mU-RNDAL3oQL2JeDLbHVdvqCANbpTlljyPooAti0Or3A'
 
 #------------------------------------------------------------------------------#
 # Actor model test suite
@@ -33,7 +39,7 @@ class ActorTestCase(unittest.TestCase):
 
     # Test GET actors endpoint
     def test_get_all_actors(self):
-        res = self.client().get('/actors')
+        res = self.client().get('/actors', headers = {'Authorization': producer_header})
         data = json.loads(res.data)
 
         self.assertEqual(res.status_code, 200)
