@@ -261,7 +261,7 @@ def create_app(test_config=None):
     # Error Handlers
     #--------------------------------------------------------------------------#
     @app.errorhandler(400)
-    def bad_request(error):
+    def bad_request(e):
         return jsonify({
             'success': False,
             'error': 400,
@@ -269,7 +269,7 @@ def create_app(test_config=None):
         }), 400
 
     @app.errorhandler(404)
-    def not_found(error):
+    def not_found(e):
         return jsonify({
             'success': False,
             'error': 404,
@@ -277,7 +277,7 @@ def create_app(test_config=None):
         }), 404
 
     @app.errorhandler(405)
-    def not_found(error):
+    def not_found(e):
         return jsonify({
             'success': False,
             'error': 405,
@@ -285,7 +285,7 @@ def create_app(test_config=None):
         }), 405
 
     @app.errorhandler(422)
-    def unprocessable(error):
+    def unprocessable(e):
         return jsonify({
             'success': False,
             'error': 422,
@@ -293,7 +293,7 @@ def create_app(test_config=None):
         }), 422
 
     @app.errorhandler(500)
-    def internal_server_error(error):
+    def internal_server_error(e):
         return jsonify({
             'success': False,
             'error': 500,
@@ -301,12 +301,12 @@ def create_app(test_config=None):
         }), 500
 
     @app.errorhandler(AuthError)
-    def authorization_error(error):
+    def authorization_error(e):
         return jsonify({
             'success': False,
-            'error': error.status_code,
-            'message': error['code']
-        }), error.status_code
+            'error': e.status_code,
+            'message': e.error['code']
+        }), e.status_code
 
     return app
 
