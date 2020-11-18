@@ -11,6 +11,20 @@
 			"item": [
 				{
 					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2efd31d2-f7fa-4979-89ae-c04bc7bf6ad3",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -25,15 +39,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:5000/actors",
-							"protocol": "http",
+							"raw": "{{heroku}}/actors",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{heroku}}"
 							],
-							"port": "5000",
 							"path": [
 								"actors"
 							]
@@ -57,15 +66,10 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:5000/actors",
-							"protocol": "http",
+							"raw": "{{heroku}}/actors",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{heroku}}"
 							],
-							"port": "5000",
 							"path": [
 								"actors"
 							]
@@ -89,15 +93,10 @@
 						"method": "PATCH",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:5000/actors/1",
-							"protocol": "http",
+							"raw": "{{heroku}}/actors/1",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{heroku}}"
 							],
-							"port": "5000",
 							"path": [
 								"actors",
 								"1"
@@ -122,15 +121,10 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:5000/actors/2",
-							"protocol": "http",
+							"raw": "{{heroku}}/actors/2",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{heroku}}"
 							],
-							"port": "5000",
 							"path": [
 								"actors",
 								"2"
@@ -141,6 +135,20 @@
 				},
 				{
 					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "96573b58-956a-4788-8654-3f89babd0fc7",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -155,15 +163,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:5000/movies",
-							"protocol": "http",
+							"raw": "{{heroku}}/movies",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{heroku}}"
 							],
-							"port": "5000",
 							"path": [
 								"movies"
 							]
@@ -187,15 +190,10 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:5000/movies",
-							"protocol": "http",
+							"raw": "{{heroku}}/movies",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{heroku}}"
 							],
-							"port": "5000",
 							"path": [
 								"movies"
 							]
@@ -219,15 +217,10 @@
 						"method": "PATCH",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:5000/movies/1",
-							"protocol": "http",
+							"raw": "{{heroku}}/movies/1",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{heroku}}"
 							],
-							"port": "5000",
 							"path": [
 								"movies",
 								"1"
@@ -252,15 +245,10 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:5000/movies/2",
-							"protocol": "http",
+							"raw": "{{heroku}}/movies/2",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{heroku}}"
 							],
-							"port": "5000",
 							"path": [
 								"movies",
 								"2"
@@ -277,6 +265,20 @@
 			"item": [
 				{
 					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5dedaa9c-a0ea-4f1f-9829-54a18743cdb2",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -291,15 +293,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:5000/actors",
-							"protocol": "http",
+							"raw": "{{heroku}}/actors",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{heroku}}"
 							],
-							"port": "5000",
 							"path": [
 								"actors"
 							]
@@ -332,15 +329,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:5000/actors",
-							"protocol": "http",
+							"raw": "{{heroku}}/actors",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{heroku}}"
 							],
-							"port": "5000",
 							"path": [
 								"actors"
 							]
@@ -373,15 +365,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:5000/actors/1",
-							"protocol": "http",
+							"raw": "{{heroku}}/actors/1",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{heroku}}"
 							],
-							"port": "5000",
 							"path": [
 								"actors",
 								"1"
@@ -406,15 +393,10 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:5000/actors/2",
-							"protocol": "http",
+							"raw": "{{heroku}}/actors/2",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{heroku}}"
 							],
-							"port": "5000",
 							"path": [
 								"actors",
 								"2"
@@ -425,6 +407,20 @@
 				},
 				{
 					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a81c81a9-2b46-4fa2-b1be-06613994a47e",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -439,15 +435,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:5000/movies",
-							"protocol": "http",
+							"raw": "{{heroku}}/movies",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{heroku}}"
 							],
-							"port": "5000",
 							"path": [
 								"movies"
 							]
@@ -480,15 +471,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:5000/movies",
-							"protocol": "http",
+							"raw": "{{heroku}}/movies",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{heroku}}"
 							],
-							"port": "5000",
 							"path": [
 								"movies"
 							]
@@ -521,15 +507,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:5000/movies/1",
-							"protocol": "http",
+							"raw": "{{heroku}}/movies/1",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{heroku}}"
 							],
-							"port": "5000",
 							"path": [
 								"movies",
 								"1"
@@ -554,15 +535,10 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:5000/movies/2",
-							"protocol": "http",
+							"raw": "{{heroku}}/movies/2",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{heroku}}"
 							],
-							"port": "5000",
 							"path": [
 								"movies",
 								"2"
@@ -579,6 +555,20 @@
 			"item": [
 				{
 					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5564343c-37b2-4da4-98fb-61d06f059be8",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -593,15 +583,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:5000/actors",
-							"protocol": "http",
+							"raw": "{{heroku}}/actors",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{heroku}}"
 							],
-							"port": "5000",
 							"path": [
 								"actors"
 							]
@@ -634,15 +619,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:5000/actors",
-							"protocol": "http",
+							"raw": "{{heroku}}/actors",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{heroku}}"
 							],
-							"port": "5000",
 							"path": [
 								"actors"
 							]
@@ -675,15 +655,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:5000/actors/1",
-							"protocol": "http",
+							"raw": "{{heroku}}/actors/1",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{heroku}}"
 							],
-							"port": "5000",
 							"path": [
 								"actors",
 								"1"
@@ -708,15 +683,10 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:5000/actors/2",
-							"protocol": "http",
+							"raw": "{{heroku}}/actors/2",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{heroku}}"
 							],
-							"port": "5000",
 							"path": [
 								"actors",
 								"2"
@@ -727,6 +697,20 @@
 				},
 				{
 					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7ca9dc42-5862-4e2a-baa3-302e95d6b046",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -741,15 +725,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:5000/movies",
-							"protocol": "http",
+							"raw": "{{heroku}}/movies",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{heroku}}"
 							],
-							"port": "5000",
 							"path": [
 								"movies"
 							]
@@ -782,15 +761,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:5000/movies",
-							"protocol": "http",
+							"raw": "{{heroku}}/movies",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{heroku}}"
 							],
-							"port": "5000",
 							"path": [
 								"movies"
 							]
@@ -823,15 +797,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:5000/movies/1",
-							"protocol": "http",
+							"raw": "{{heroku}}/movies/1",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{heroku}}"
 							],
-							"port": "5000",
 							"path": [
 								"movies",
 								"1"
@@ -856,15 +825,10 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:5000/movies/2",
-							"protocol": "http",
+							"raw": "{{heroku}}/movies/2",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{heroku}}"
 							],
-							"port": "5000",
 							"path": [
 								"movies",
 								"2"
@@ -875,6 +839,40 @@
 				}
 			],
 			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "dcd6743f-770d-4560-928d-7b5147bfefc7",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "cbbdd2ee-2a29-4b26-873b-d0f57ff20515",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "ca8f4f75-370f-40ca-afbc-745b0a4108d3",
+			"key": "localhost",
+			"value": "http://127.0.0.1:5000/"
+		},
+		{
+			"id": "dbf04472-c6d4-43f3-912c-9764f412cca6",
+			"key": "heroku",
+			"value": "https://kane-films-capstone.herokuapp.com/"
 		}
 	],
 	"protocolProfileBehavior": {}
