@@ -7,7 +7,7 @@ The [Kane Films](https://kane-films-capstone.herokuapp.com/) application consist
 
 ## Getting Started
 
-###Pre-Requisites and Local Development
+### Pre-Requisites and Local Development
 To get started you will need to have [Python3](https://docs.python.org/3/using/unix.html#getting-and-installing-the-latest-version-of-python) and [pip](https://pypi.org/project/pip/) installed on your local environment. In order to keep dependencies separate and organized, you should set up a [virtual environment](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/).
 
 #### Dependencies
@@ -25,7 +25,7 @@ This will install all of the required packages within the **requirements.txt** f
 
 - [CORS](https://flask-cors.readthedocs.io/en/latest/) is a Flask extension to handle [Cross Origin Resource Sharing (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS).
 
-- [jose](https://python-jose.readthedocs.io/en/latest/) JavaScript Object Signing and Encryption for JWTs. Useful for encoding, decoding, and verifying JWTS.
+- [jose](https://python-jose.readthedocs.io/en/latest/) is JavaScript Object Signing and Encryption for JWTs. Useful for encoding, decoding, and verifying JWTS.
 
 - [Auth0](https://auth0.com/) to manage authentication and permissions.
 
@@ -49,7 +49,7 @@ flask run
 ```
 
 #### Test Suite
-The main directory also contains a simple test suite for successful behavior of the API's endpoints and common errors. The tests file is located at **[test_app.py]**(https://github.com/dgamboa/udacity-fullstack-capstone/blob/master/test_app.py). Note that you will have to generate new tokens and replace them in the constants at the top of the test file in order for the tests to run properly.
+The main directory also contains a simple test suite for successful behavior of the API's endpoints and common errors. The tests file is located at [test_app.py](https://github.com/dgamboa/udacity-fullstack-capstone/blob/master/test_app.py). Note that you will have to generate new tokens and replace them in the constants at the top of the test file in order for the tests to run properly.
 
 ## API Reference
 
@@ -84,6 +84,7 @@ Other errors handled by the API include:
 ### Endpoints
 #### GET /actors
 Returns a list of actors in the database organized by actor id as a dictionary stored in the *actors* variable. It also returns the total number of actors in the *number_of_actors* variable along with a *success* variable.
+```
 {
     "actors": {
         "1": "Oprah Winfrey",
@@ -95,7 +96,8 @@ Returns a list of actors in the database organized by actor id as a dictionary s
     },
     "number_of_actors": 6,
     "success": true
-}  
+}
+```
 
 #### GET /movies
 Returns a list of movies in the database organized by movie id as a dictionary stored in the *movies* variable. It also returns the total number of movies in the *number_of_movies* variable along with a *success* variable.
@@ -225,7 +227,7 @@ Updates the movie record specified by the *movie_id* parameter in the URL and re
 ```
 
 ## Authors
-Daniel Gamboa, Udacity Full Stack Nanodegree Student
+[Daniel Gamboa](https://www.linkedin.com/in/dnlgmb/), Udacity Full Stack Nanodegree Student
 
 ## Acknowledgements
 Thank you to the [Udacity](https://www.udacity.com/) team for developing the learning experience that culminated in my ability to build and deploy this capstone project from scratch.
