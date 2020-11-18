@@ -99,6 +99,7 @@ Returns a list of actors in the database organized by actor id as a dictionary s
 
 #### GET /movies
 Returns a list of movies in the database organized by movie id as a dictionary stored in the *movies* variable. It also returns the total number of movies in the *number_of_movies* variable along with a *success* variable.
+```
 {
     "movies": {
         "1": "Back to the Future Part II",
@@ -111,9 +112,11 @@ Returns a list of movies in the database organized by movie id as a dictionary s
     "number_of_movies": 6,
     "success": true
 }
+```
 
 #### POST /actors
 Creates a new actor record and returns its actor id in the *created* variable and a list of actors in the database organized by actor id as a dictionary stored in the *actors* variable. It also returns the total number of actors in the *number_of_actors* variable along with a *success* variable.
+```
 {
     "actors": {
         "1": "Oprah Winfrey",
@@ -128,9 +131,11 @@ Creates a new actor record and returns its actor id in the *created* variable an
     "number_of_actors": 7,
     "success": true
 }
+```
 
 #### POST /movies
 Creates a new movie record and returns its movie id in the *created* variable and a list of movies in the database organized by movie id as a dictionary stored in the *movies* variable. It also returns the total number of movies in the *number_of_movies* variable along with a *success* variable.
+```
 {
     "created": 7,
     "movies": {
@@ -145,9 +150,11 @@ Creates a new movie record and returns its movie id in the *created* variable an
     "number_of_movies": 7,
     "success": true
 }
+```
 
 #### DELETE /actors/{actor_id}
 Deletes the actor record specified by the *actor_id* parameter in the URL and returns the *actors*, *number_of_actors*, *success* and the *actor_id* variables.
+```
 {
     "actors": {
         "1": "Oprah Winfrey",
@@ -161,9 +168,11 @@ Deletes the actor record specified by the *actor_id* parameter in the URL and re
     "number_of_actors": 6,
     "success": true
 }
+```
 
 #### DELETE /movies/{movie_id}
 Deletes the movie record specified by the *movie_id* parameter in the URL and returns the *movies*, *number_of_movies*, *success* and the *movie_id* variables.
+```
 {
     "deleted": 5,
     "movies": {
@@ -177,9 +186,11 @@ Deletes the movie record specified by the *movie_id* parameter in the URL and re
     "number_of_movies": 6,
     "success": true
 }
+```
 
 #### PATCH /actors/{actor_id}
 Updates the actor record specified by the *actor_id* parameter in the URL and returns the *actors*, *number_of_actors*, *success* and the *actor_id* variables.
+```
 {
     "actors": {
         "1": "Oprah Winfrey",
@@ -193,9 +204,11 @@ Updates the actor record specified by the *actor_id* parameter in the URL and re
     "number_of_actors": 6,
     "success": true
 }
+```
 
 #### PATCH /movies/{movie_id}
 Updates the movie record specified by the *movie_id* parameter in the URL and returns the *movies*, *number_of_movies*, *success* and the *movie_id* variables.
+```
 {
     "updated": 4,
     "movies": {
@@ -209,6 +222,7 @@ Updates the movie record specified by the *movie_id* parameter in the URL and re
     "number_of_movies": 6,
     "success": true
 }
+```
 
 ## Authors
 Daniel Gamboa, Udacity Full Stack Nanodegree Student
