@@ -30,16 +30,10 @@ This will install all of the required packages within the **requirements.txt** f
 - [Auth0](https://auth0.com/) to manage authentication and permissions.
 
 #### Running the Server Locally
-From within the main project directory activate the virtual environment and set the environment variables that will point the Flask server to the app by running:
+From within the main project directory activate the virtual environment and set the environment variables by running the bash script **setup.bash** as follows:
 
 ```
-export FLASK_APP=api.py
-```
-
-You should also considering configuring the server such that updates in your code are automatically reloaded into the running server. You can do this by running:
-
-```
-export FLASK_ENV=development
+source setup.sh
 ```
 
 To activate the server, run:
