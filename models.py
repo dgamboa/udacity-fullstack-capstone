@@ -6,7 +6,8 @@ import json
 database_path = os.environ.get('DATABASE_URL')
 if not database_path:
     database_name = "agency"
-    database_path = "postgresql://{}/{}".format('localhost:5432', database_name)
+    database_path = "postgresql://{}/{}".format('localhost:5432',
+                                                database_name)
 
 db = SQLAlchemy()
 
@@ -23,8 +24,14 @@ def setup_db(app, database_path=database_path):
 # Association Table
 # -------------------------------------------------------------------------- #
 actor_movies = db.Table('actor_movies',
-                        db.Column('actor_id', db.Integer, db.ForeignKey('actors.id'), primary_key=True),
-                        db.Column('movie_id', db.Integer, db.ForeignKey('movies.id'), primary_key=True)
+                        db.Column('actor_id',
+                                  db.Integer,
+                                  db.ForeignKey('actors.id'),
+                                  primary_key=True),
+                        db.Column('movie_id',
+                                  db.Integer,
+                                  db.ForeignKey('movies.id'),
+                                  primary_key=True)
                         )
 
 
@@ -38,7 +45,10 @@ class Actor(db.Model):
     name = Column(String, nullable=False)
     age = Column(Integer)
     gender = Column(String)
-    movies = db.relationship('Movie', secondary=actor_movies, backref=db.backref('actors', lazy=True))
+    movies = db.relationship('Movie',
+                             secondary=actor_movies,
+                             backref=db.backref('actors', lazy=True)
+                             )
 
     def __init__(self, name, age, gender):
         self.name = name
