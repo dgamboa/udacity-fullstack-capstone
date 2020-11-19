@@ -6,13 +6,6 @@ from flask_sqlalchemy import SQLAlchemy
 from app import create_app
 from models import setup_db, Actor, Movie, actor_movies
 
-# --------------------------------------------------------------------------- #
-# Actor model test suite
-# --------------------------------------------------------------------------- #
-assistant_header = 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImlrN04xYXV3bWUyT0pTT3BmaG1qOSJ9.eyJpc3MiOiJodHRwczovL2thbmUtZmlsbXMtY2Fwc3RvbmUudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmYjQyOGQ1MWJkYTAwMDA3NWUwZmRlNyIsImF1ZCI6InJlc291cmNlcyIsImlhdCI6MTYwNTc1MzM5NCwiZXhwIjoxNjA1ODM5Nzk0LCJhenAiOiJMWm82V3ltckYxQkFnUERxODBpVWZENnhObWFzdzNHcSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiXX0.oWw-zWRENdS9jMAjUUhI5XRVDrwjIDJVfoUAugdj0e-IKbGseMfCaKvZjCFPRqMhoEhRfh-oLgImeXjeo3J1xf2CvWuEDQhSK_L8nlOH23bNflLEHvKRkg7onTrWsG3FT0p0w6JoEw_mMiIglMsksAGG6L22AB9SBqEvbADozOY26VLQE8OENsn1P0qZK_yGlSwm_Gng2OXHxlS1G1mNSkpxwVBbYiTdleCEEB0C1EM_uAivReeSLshdlaJiKjiBs_1TX9VksBUyyKkipG5N-OMOCkYj4r-DDwuPXXopO15Eq2nV6qx2xFfzwkf07rNcaSbDYOseZ8lHBJLxUcVWaA'
-director_header = 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImlrN04xYXV3bWUyT0pTT3BmaG1qOSJ9.eyJpc3MiOiJodHRwczovL2thbmUtZmlsbXMtY2Fwc3RvbmUudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmYjQyODM0MGJkNGMyMDA2OGY1Zjg3ZiIsImF1ZCI6InJlc291cmNlcyIsImlhdCI6MTYwNTc1MzQ0MiwiZXhwIjoxNjA1ODM5ODQyLCJhenAiOiJMWm82V3ltckYxQkFnUERxODBpVWZENnhObWFzdzNHcSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIiwicGF0Y2g6YWN0b3JzIiwicGF0Y2g6bW92aWVzIiwicG9zdDphY3RvcnMiXX0.z5zqfHlxkuDVJar3L84rCbzquKPBrVeRY_o037GAacJ1zJf5lawfAxE-gJsj7KV0Kw3tvP76FF_wFYT23Lvb8kytcL-hJted6wg2NBAJz3ddWK6nOPZaqXCVy_lYG1MmLapbgzVhrFP5ngwNMo4FpwJ4RJpL1fKhCKXk06GcCTJdbvg9AFRWZ7D1EALS0k_d0dCq0AcGHcJKd36YSD-tshb4L5fMtWFpVaEaC138lMi8cDPhLzlocd04bwX5WjJRxp7C17CL3hQr00TYqDuWkx2a4zCWM-CtHIXETIHcSqJ_uTX5iHiBN0AD_OWD4DKo_jOvo1Y_LcL0_InjthGKDA'
-producer_header = 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImlrN04xYXV3bWUyT0pTT3BmaG1qOSJ9.eyJpc3MiOiJodHRwczovL2thbmUtZmlsbXMtY2Fwc3RvbmUudXMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVmYjJkMDE3NjYyNzVkMDA2ZTVhMjM3MSIsImF1ZCI6InJlc291cmNlcyIsImlhdCI6MTYwNTc1MzQ4OCwiZXhwIjoxNjA1ODM5ODg4LCJhenAiOiJMWm82V3ltckYxQkFnUERxODBpVWZENnhObWFzdzNHcSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImRlbGV0ZTptb3ZpZXMiLCJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOm1vdmllcyIsInBvc3Q6YWN0b3JzIiwicG9zdDptb3ZpZXMiXX0.BeH1I27evj8i97_3h5eIC9avUtKHh96MwTcCrNYGeR3gV5gcdKSiHzhAyzyHQM6W9IarY1gdjFYZDL65V7_6LvxM03xwDrAcZlU9YAki_LOaIaDnB9seJ8EwhGy42f37PyRcWFCxDa8LtS6Stum3cBGbKDhkI0T8dbawdJ-akEmHCQ7hww2jsg9H6e-pOfpAWe3Vbq-pIbcfj0qIQa-2lbhj8TFtUJWktdgJik2JSD6Nckqy5o3QFSJf6o3S0C91ROw38InoT1fUj-ko0qZebDd1AgpCiDL4YPXfiXp-IzPBXKAJ6Pi35KgvnNcB-WkgygqmFduvrgQKEpyr8LvkWg'
-
 
 # --------------------------------------------------------------------------- #
 # Actor model test suite
@@ -34,14 +27,9 @@ class ActorTestCase(unittest.TestCase):
             self.db.create_all()
 
         # Define tokens for tests
-        if os.environ.get('ASSISTANT_TOKEN') is None:
-            self.assistant_header = assistant_header
-            self.director_header = director_header
-            self.producer_header = producer_header
-        else:
-            self.assistant_header = os.environ.get('ASSISTANT_TOKEN')
-            self.director_header = os.environ.get('DIRECTOR_TOKEN')
-            self.producer_header = os.environ.get('PRODUCER_TOKEN')
+        self.assistant_header = os.environ.get('ASSISTANT_TOKEN')
+        self.director_header = os.environ.get('DIRECTOR_TOKEN')
+        self.producer_header = os.environ.get('PRODUCER_TOKEN')
 
     def tearDown(self):
         # Execute after each test
@@ -185,14 +173,9 @@ class MovieTestCase(unittest.TestCase):
             self.db.create_all()
 
         # Define tokens for tests
-        if os.environ.get('ASSISTANT_TOKEN') is None:
-            self.assistant_header = assistant_header
-            self.director_header = director_header
-            self.producer_header = producer_header
-        else:
-            self.assistant_header = os.environ.get('ASSISTANT_TOKEN')
-            self.director_header = os.environ.get('DIRECTOR_TOKEN')
-            self.producer_header = os.environ.get('PRODUCER_TOKEN')
+        self.assistant_header = os.environ.get('ASSISTANT_TOKEN')
+        self.director_header = os.environ.get('DIRECTOR_TOKEN')
+        self.producer_header = os.environ.get('PRODUCER_TOKEN')
 
     def tearDown(self):
         # Execute after each test

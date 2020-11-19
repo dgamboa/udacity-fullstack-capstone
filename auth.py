@@ -1,3 +1,4 @@
+import os
 import json
 import logging
 from flask import request, _request_ctx_stack, abort
@@ -6,9 +7,9 @@ from jose import jwt
 from urllib.request import urlopen
 
 
-AUTH0_DOMAIN = 'kane-films-capstone.us.auth0.com'
-ALGORITHMS = ['RS256']
-API_AUDIENCE = 'resources'
+AUTH0_DOMAIN = os.environ['AUTH0_DOMAIN']
+ALGORITHMS = os.environ['ALGORITHMS']
+API_AUDIENCE = os.environ['API_AUDIENCE']
 
 
 # Standard error messages for authentication
