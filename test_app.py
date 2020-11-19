@@ -17,7 +17,8 @@ class ActorTestCase(unittest.TestCase):
         self.app = create_app()
         self.client = self.app.test_client
         self.database_name = "agency_test"
-        self.database_path = "postgresql://{}/{}".format('localhost:5432', self.database_name)
+        self.database_path = "postgresql://{}/{}".format('localhost:5432',
+                                                         self.database_name)
         setup_db(self.app, self.database_path)
 
         # Bind the app to the appropriate context
@@ -38,7 +39,8 @@ class ActorTestCase(unittest.TestCase):
     # Test GET actors endpoint
     def test_get_all_actors(self):
         res = self.client().get('/actors',
-                                headers={'Authorization': self.assistant_header})
+                                headers={'Authorization':
+                                         self.assistant_header})
         data = json.loads(res.data)
 
         self.assertEqual(res.status_code, 200)
@@ -60,7 +62,8 @@ class ActorTestCase(unittest.TestCase):
 
     def test_422_if_actor_to_delete_does_not_exist(self):
         res = self.client().delete('actors/100',
-                                   headers={'Authorization': self.director_header})
+                                   headers={'Authorization':
+                                            self.director_header})
         data = json.loads(res.data)
 
         self.assertEqual(res.status_code, 422)
@@ -76,7 +79,8 @@ class ActorTestCase(unittest.TestCase):
         }
 
         res = self.client().post('/actors', json=new_actor,
-                                 headers={'Authorization': self.director_header})
+                                 headers={'Authorization':
+                                          self.director_header})
         data = json.loads(res.data)
 
         self.assertEqual(res.status_code, 200)
@@ -87,7 +91,8 @@ class ActorTestCase(unittest.TestCase):
 
     def test_400_if_create_actor_fails_from_empty_form(self):
         res = self.client().post('/actors',
-                                 headers={'Authorization': self.director_header})
+                                 headers={'Authorization':
+                                          self.director_header})
         data = json.loads(res.data)
 
         self.assertEqual(res.status_code, 400)
@@ -102,7 +107,8 @@ class ActorTestCase(unittest.TestCase):
         }
 
         res = self.client().post('/actors', json=bad_actor,
-                                 headers={'Authorization': self.director_header})
+                                 headers={'Authorization':
+                                          self.director_header})
         data = json.loads(res.data)
 
         self.assertEqual(res.status_code, 422)
@@ -118,7 +124,8 @@ class ActorTestCase(unittest.TestCase):
         }
 
         res = self.client().patch('/actors/2', json=updated_actor,
-                                  headers={'Authorization': self.director_header})
+                                  headers={'Authorization':
+                                           self.director_header})
         data = json.loads(res.data)
 
         self.assertEqual(res.status_code, 200)
@@ -129,7 +136,8 @@ class ActorTestCase(unittest.TestCase):
 
     def test_422_if_update_actor_fails_from_empty_form(self):
         res = self.client().patch('/actors/2',
-                                  headers={'Authorization': self.director_header})
+                                  headers={'Authorization':
+                                           self.director_header})
         data = json.loads(res.data)
 
         self.assertEqual(res.status_code, 422)
@@ -144,7 +152,8 @@ class ActorTestCase(unittest.TestCase):
         }
 
         res = self.client().patch('/actors/2', json=another_bad_actor,
-                                  headers={'Authorization': self.director_header})
+                                  headers={'Authorization':
+                                           self.director_header})
         data = json.loads(res.data)
 
         self.assertEqual(res.status_code, 422)
@@ -184,7 +193,8 @@ class MovieTestCase(unittest.TestCase):
     # Test GET movies endpoint
     def test_get_all_movies(self):
         res = self.client().get('/movies',
-                                headers={'Authorization': self.assistant_header})
+                                headers={'Authorization':
+                                         self.assistant_header})
         data = json.loads(res.data)
 
         self.assertEqual(res.status_code, 200)
@@ -194,7 +204,8 @@ class MovieTestCase(unittest.TestCase):
     # Test DELETE movies endpoint
     # def test_delete_movie(self):
     #     res = self.client().delete('/movies/2',
-    #                                headers={'Authorization': self.producer_header})
+    #                                headers={'Authorization':
+    #                                         self.producer_header})
     #     data = json.loads(res.data)
     #
     #     self.assertEqual(res.status_code, 200)
@@ -205,7 +216,8 @@ class MovieTestCase(unittest.TestCase):
 
     def test_422_if_movie_to_delete_does_not_exist(self):
         res = self.client().delete('movies/100',
-                                   headers={'Authorization': self.producer_header})
+                                   headers={'Authorization':
+                                            self.producer_header})
         data = json.loads(res.data)
 
         self.assertEqual(res.status_code, 422)
@@ -220,7 +232,8 @@ class MovieTestCase(unittest.TestCase):
         }
 
         res = self.client().post('/movies', json=new_movie,
-                                 headers={'Authorization': self.producer_header})
+                                 headers={'Authorization':
+                                          self.producer_header})
         data = json.loads(res.data)
 
         self.assertEqual(res.status_code, 200)
@@ -231,7 +244,8 @@ class MovieTestCase(unittest.TestCase):
 
     def test_400_if_create_movie_fails_from_empty_form(self):
         res = self.client().post('/movies',
-                                 headers={'Authorization': self.producer_header})
+                                 headers={'Authorization':
+                                          self.producer_header})
         data = json.loads(res.data)
 
         self.assertEqual(res.status_code, 400)
@@ -245,7 +259,8 @@ class MovieTestCase(unittest.TestCase):
         }
 
         res = self.client().post('/movies', json=bad_movie,
-                                 headers={'Authorization': self.producer_header})
+                                 headers={'Authorization':
+                                          self.producer_header})
         data = json.loads(res.data)
 
         self.assertEqual(res.status_code, 422)
@@ -260,7 +275,8 @@ class MovieTestCase(unittest.TestCase):
         }
 
         res = self.client().patch('/movies/2', json=updated_movie,
-                                  headers={'Authorization': self.director_header})
+                                  headers={'Authorization':
+                                           self.director_header})
         data = json.loads(res.data)
 
         self.assertEqual(res.status_code, 200)
@@ -271,7 +287,8 @@ class MovieTestCase(unittest.TestCase):
 
     def test_422_if_update_movie_fails_from_empty_form(self):
         res = self.client().patch('/movies/2',
-                                  headers={'Authorization': self.director_header})
+                                  headers={'Authorization':
+                                           self.director_header})
         data = json.loads(res.data)
 
         self.assertEqual(res.status_code, 422)
@@ -285,7 +302,8 @@ class MovieTestCase(unittest.TestCase):
         }
 
         res = self.client().patch('/movies/2', json=another_bad_movie,
-                                  headers={'Authorization': self.director_header})
+                                  headers={'Authorization':
+                                           self.director_header})
         data = json.loads(res.data)
 
         self.assertEqual(res.status_code, 422)
