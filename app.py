@@ -16,19 +16,20 @@ def create_app(test_config=None):
     # Set up CORS to explicitly allow all origins
     CORS(app, resources={r"/api/*": {"origins": "*"}})
 
-    #--------------------------------------------------------------------------#
-    # CORS Headers
-    #--------------------------------------------------------------------------#
+# -------------------------------------------------------------------------- #
+# CORS Headers
+# -------------------------------------------------------------------------- #
     @app.after_request
     def after_request(response):
-        response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization,true')
-        response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
+        response.headers.add('Access-Control-Allow-Headers',
+                             'Content-Type,Authorization,true')
+        response.headers.add('Access-Control-Allow-Methods',
+                             'GET,PUT,POST,DELETE,OPTIONS')
         return response
 
-
-    #--------------------------------------------------------------------------#
-    # API Endpoints
-    #--------------------------------------------------------------------------#
+# ------------------------------------------------------------------------- #
+# API Endpoints
+# ------------------------------------------------------------------------- #
     # Index route for home page
     @app.route('/')
     def home():
@@ -38,7 +39,6 @@ def create_app(test_config=None):
             'author': 'Daniel Gamboa',
             'date': '2020-11-20'
         })
-
 
     # GET all actors
     @app.route('/actors')
@@ -71,7 +71,7 @@ def create_app(test_config=None):
             actors = Actor.query.order_by(Actor.id).all()
             formatted_actors = {actor.id: actor.name for actor in actors}
 
-            return jsonify ({
+            return jsonify({
                 'success': True,
                 'deleted': actor_id,
                 'actors': formatted_actors,
@@ -88,7 +88,7 @@ def create_app(test_config=None):
     def create_actor(payload):
         body = request.get_json()
 
-        if body == None:
+        if body is None:
             abort(400)
 
         new_name = body.get('name', None)
@@ -150,7 +150,6 @@ def create_app(test_config=None):
             print(e)
             abort(422)
 
-
     # GET all movies
     @app.route('/movies')
     @requires_auth('get:movies')
@@ -182,7 +181,7 @@ def create_app(test_config=None):
             movies = Movie.query.order_by(Movie.id).all()
             formatted_movies = {movie.id: movie.title for movie in movies}
 
-            return jsonify ({
+            return jsonify({
                 'success': True,
                 'deleted': movie_id,
                 'movies': formatted_movies,
@@ -199,7 +198,7 @@ def create_app(test_config=None):
     def create_movie(payload):
         body = request.get_json()
 
-        if body == None:
+        if body is None:
             abort(400)
 
         new_title = body.get('title', None)
@@ -256,10 +255,9 @@ def create_app(test_config=None):
             print(e)
             abort(422)
 
-
-    #--------------------------------------------------------------------------#
-    # Error Handlers
-    #--------------------------------------------------------------------------#
+# ------------------------------------------------------------------------- #
+# Error Handlers
+# ------------------------------------------------------------------------- #
     @app.errorhandler(400)
     def bad_request(e):
         return jsonify({
