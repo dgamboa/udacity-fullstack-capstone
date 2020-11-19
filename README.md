@@ -36,6 +36,12 @@ From within the main project directory activate the virtual environment and set 
 source setup.sh
 ```
 
+Then set the environment variables for running the app as follows:
+
+```
+export FLASK_APP=app && export FLASK_ENV=development
+```
+
 To activate the server, run:
 
 ```
