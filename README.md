@@ -59,6 +59,13 @@ In order to interact with the live application hosted on [Heroku](https://www.he
 
 You can send these requests using [Postman](https://www.postman.com/) or [curl](https://curl.haxx.se/download.html). If you choose to use [Postman](https://www.postman.com/), you will find a ready-made collection in the file named [kane-films.postman_collection](https://github.com/dgamboa/udacity-fullstack-capstone/blob/master/kane-films.postman_collection.json) located in the main project directory.
 
+#### Setting Up Authentication
+In order to utilize the API, you will need to sign up as a user. Please visit the link below and sign up with your preferred email and password.
+
+[Sign Up!](https://kane-films-capstone.us.auth0.com/authorize?audience=resources&response_type=token&client_id=LZo6WymrF1BAgPDq80iUfD6xNmasw3Gq&redirect_uri=https://kane-films-capstone.herokuapp.com/)
+
+After signing up you will be redirected to app's the [home page](https://kane-films-capstone.herokuapp.com/).
+
 ### Roles & Permissions
 There are three user roles in the API:
 - Assistants: permissions include `get:actors` and `get:movies`
