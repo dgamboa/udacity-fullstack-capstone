@@ -1,10 +1,20 @@
 import os
 
-from flask import Flask, request, abort, jsonify
+from flask import (
+    Flask,
+    request,
+    abort,
+    jsonify
+)
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 
-from models import setup_db, Actor, Movie, actor_movies
+from models import (
+    setup_db,
+    Actor,
+    Movie,
+    actor_movies
+)
 from auth import AuthError, requires_auth
 
 
@@ -34,8 +44,8 @@ def create_app(test_config=None):
     @app.route('/')
     def home():
         return jsonify({
-            'welcome': 'Welcome to Kane Films,\
-            executive producers connecting actors and movies',
+            'welcome': 'Welcome to Kane Films, \
+executive producers connecting actors and movies',
             'context': 'Capstone project for Udacity\'s Full Stack nanodegree',
             'author': 'Daniel Gamboa',
             'date': '2020-11-20'
@@ -92,9 +102,9 @@ def create_app(test_config=None):
         if body is None:
             abort(400)
 
-        new_name = body.get('name', None)
-        new_age = body.get('age', None)
-        new_gender = body.get('gender', None)
+        new_name = body.get('name')
+        new_age = body.get('age')
+        new_gender = body.get('gender')
 
         try:
             actor = Actor(name=new_name, age=new_age, gender=new_gender)
@@ -122,9 +132,9 @@ def create_app(test_config=None):
             body = request.get_json()
 
             actor = Actor.query.get(actor_id)
-            new_name = body.get('name', None)
-            new_age = body.get('age', None)
-            new_gender = body.get('gender', None)
+            new_name = body.get('name')
+            new_age = body.get('age')
+            new_gender = body.get('gender')
 
             if new_name:
                 actor.name = new_name
@@ -202,8 +212,8 @@ def create_app(test_config=None):
         if body is None:
             abort(400)
 
-        new_title = body.get('title', None)
-        new_release = body.get('release', None)
+        new_title = body.get('title')
+        new_release = body.get('release')
 
         try:
             movie = Movie(title=new_title, release=new_release)
@@ -231,8 +241,8 @@ def create_app(test_config=None):
             body = request.get_json()
 
             movie = Movie.query.get(movie_id)
-            new_title = body.get('title', None)
-            new_release = body.get('release', None)
+            new_title = body.get('title')
+            new_release = body.get('release')
 
             if new_title:
                 movie.title = new_title
