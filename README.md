@@ -11,7 +11,7 @@ The [Kane Films](https://kane-films-capstone.herokuapp.com/) application consist
 To get started you will need to have [Python3](https://docs.python.org/3/using/unix.html#getting-and-installing-the-latest-version-of-python) and [pip](https://pypi.org/project/pip/) installed on your local environment. In order to keep dependencies separate and organized, you should set up a [virtual environment](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/).
 
 #### Dependencies
-In the main project directory run:
+After setting up your virtual environment in the main project directory, run:
 ```
 pip install -r requirements.txt
 ```
